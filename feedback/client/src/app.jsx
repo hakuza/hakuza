@@ -9,6 +9,18 @@ class App extends React.Component {
       state: true
     };
   }
+
+  componentDidMount() {
+    axios
+      .get("/feedback")
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   render() {
     return <div />;
   }

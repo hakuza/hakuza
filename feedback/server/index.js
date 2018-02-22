@@ -8,6 +8,6 @@ app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.use(bodyParser.json());
 
-app.use("/", router);
+app.use("/feedback", router);
 
 app.listen(3002, () => console.log("Example app listening on port 3002!"));
