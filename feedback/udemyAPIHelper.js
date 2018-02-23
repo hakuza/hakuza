@@ -1,12 +1,12 @@
 const rp = require("request-promise");
-const Review = require("./../database/index.js");
+const Review = require("./database/index.js");
 
 async function getCourses() {
   let data = "";
   let courseReview = [];
   let options = {
     method: "GET",
-    uri: `https://www.udemy.com/api-2.0/courses`,
+    uri: `https://www.udemy.com/api-2.0/courses/?page_size=100`,
     headers: {
       Authorization:
         "Basic TzhFUjFwSXdseFVmSTB1MHgxYXhyUEFtWEp4V3lOWWJxWXdpVmZ1Njoyc0EyNGxoSzBKRWdvNFlsRjd4c3pmYnZPV0M3UzZlSDJwcTVSWm8zZTdHTjdEY3JHSkZoNFcyckdsNXJ4N2ZCMlpPaFJHQ2tIU21WQjM0NlEyVVk3blZObzUzUVNMaWlWVXlzWTlOWE9ZdzZ4Uk43NEVMOE5SYW5haDJuUU42Tw==",
@@ -36,8 +36,8 @@ async function getCourses() {
         console.log(err);
       }
       var storage = {};
-      storage.id = id;
-      storage.review = review.results;
+      storage.courseId = id;
+      storage.reviews = review.results;
       var reviewList = new Review.Review(storage);
       reviewList
         .save(function(err) {
@@ -54,5 +54,13 @@ async function getCourses() {
     getReviews(data.results[i].id);
   }
 }
+
+getCourses().then(err => {
+  if (err) {
+    console.log(err);
+  } else {
+    null;
+  }
+});
 
 module.exports.getCourses = getCourses;
