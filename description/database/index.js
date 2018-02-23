@@ -13,8 +13,7 @@ const udemySchema = mongoose.Schema({
   avg_rating: String,
   num_lectures: Number,
   created: Date,
-  num_reviews: Number,
-  description: String
+  num_reviews: Number
 });
 
 const Udemy = mongoose.model("Udemy", udemySchema);
@@ -48,8 +47,7 @@ async function getCourses() {
       num_subscribers: currentCourse.num_subscribers,
       num_lectures: currentCourse.num_lectures,
       num_reviews: currentCourse.num_reviews,
-      created: currentCourse.created,
-      description: currentCourse.description
+      created: currentCourse.created
     };
 
     let obj = new Udemy(document);
@@ -58,12 +56,13 @@ async function getCourses() {
     } catch (err) {
       console.error(err);
     }
+    console.log(obj);
   }
 }
 
 getCourses().then(() =>
   Udemy.find((err, results) => {
     if (err) console.log(err);
-    else console.log(results);
+    // else console.log(results);
   })
 );
