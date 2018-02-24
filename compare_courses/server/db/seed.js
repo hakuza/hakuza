@@ -42,12 +42,14 @@ rp(options)
   .then(([body2, results]) => {
     results = [...results, ...JSON.parse(body2).results]
     console.log(`Got ${results.length} results`);
-    console.log(queryCreator.insert(results[0]));
+    // console.log(queryCreator.insert(results[0]));
     let inserts = results.map(item => db.query(queryCreator.insert(item)));
     return Promise.all(inserts);
   })
   .then(dbResponse => {
-    console.log(typeof dbResponse);
+    console.log(`Inserted ${dbResponse.length} rows into courses`);
+    console.log('Closing connection');
+    db.connection.end();
   })
   .catch(err => {
     throw err
