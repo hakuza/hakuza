@@ -1,9 +1,9 @@
 import React from "react";
-import ReactShallowRenderer from "react-test-renderer";
-import Feedback from "../../client/components/Feedback.jsx";
+import { shallow } from "enzyme";
+import App from "../../client/components/App.jsx";
 
 test("should render Feedback correctly", () => {
-  const renderer = new ReactShallowRenderer();
-  renderer.render(<Feedback />);
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
+  const component = renderer.create(<App />);
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
