@@ -4,7 +4,10 @@ mongoose.connect("mongodb://localhost/udemy");
 
 const udemySchema = mongoose.Schema({
   //create schema
-  id: { type: Number, unique: true },
+  id: {
+    type: Number,
+    unique: true
+  },
   name: String,
   title: String,
   price: String,
@@ -21,8 +24,7 @@ const Udemy = mongoose.model("Udemy", udemySchema);
 let options = {
   url: `https://www.udemy.com/api-2.0/courses/?page_size=200&search=programming&ordering=highest-rated&fields[course]=title,headline,num_lectures,num_subscribers,created,visible_instructors,avg_rating,price,num_reviews,description`,
   headers: {
-    Authorization:
-      "Basic YnFuRUljaHNndUFjdk9MbHlEYUFOa2RJV1d1aXpyOWFldDRzUE5NYzpBVFRkTzB6dW5HeFB4cUxtMWlyUWw4Q0VTTlRIaGZ2Vlh3Y3RUckR6cHNRM25zTUF0bnliTUQ2U3hYNHVSMUNQZ0tIcjUyWFdFeTZZendtVUZuRHFVZ3UwTVFPcFpvbjlLODZOTHcwNURha1U1bElrVTZpQ24yZmhKMkhEMlI3Nw==",
+    Authorization: "Basic YnFuRUljaHNndUFjdk9MbHlEYUFOa2RJV1d1aXpyOWFldDRzUE5NYzpBVFRkTzB6dW5HeFB4cUxtMWlyUWw4Q0VTTlRIaGZ2Vlh3Y3RUckR6cHNRM25zTUF0bnliTUQ2U3hYNHVSMUNQZ0tIcjUyWFdFeTZZendtVUZuRHFVZ3UwTVFPcFpvbjlLODZOTHcwNURha1U1bElrVTZpQ24yZmhKMkhEMlI3Nw==",
     Accept: "application/json, text/plain, */*"
   }
 };
