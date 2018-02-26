@@ -63,6 +63,6 @@ async function getCourses() {
 getCourses().then(() =>
   Udemy.find((err, results) => {
     if (err) console.log(err);
-    // else console.log(results);
+    else console.log(results);
   })
 );
