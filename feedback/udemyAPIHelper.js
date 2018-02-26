@@ -6,7 +6,7 @@ async function getCourses() {
   let courseReview = [];
   let options = {
     method: "GET",
-    uri: `https://www.udemy.com/api-2.0/courses/?page_size=100`,
+    uri: `https://www.udemy.com/api-2.0/courses/?page_size=100`, //the max size is 100
     headers: {
       Authorization:
         "Basic TzhFUjFwSXdseFVmSTB1MHgxYXhyUEFtWEp4V3lOWWJxWXdpVmZ1Njoyc0EyNGxoSzBKRWdvNFlsRjd4c3pmYnZPV0M3UzZlSDJwcTVSWm8zZTdHTjdEY3JHSkZoNFcyckdsNXJ4N2ZCMlpPaFJHQ2tIU21WQjM0NlEyVVk3blZObzUzUVNMaWlWVXlzWTlOWE9ZdzZ4Uk43NEVMOE5SYW5haDJuUU42Tw==",
@@ -22,7 +22,7 @@ async function getCourses() {
     async function getReviews(id) {
       let options = {
         method: "GET",
-        uri: `https://www.udemy.com/api-2.0/courses/${id}/reviews/?fields[course_review]=@all`,
+        uri: `https://www.udemy.com/api-2.0/courses/${id}/reviews/?page_size=100`, //the max size is 100
         headers: {
           Authorization:
             "Basic TzhFUjFwSXdseFVmSTB1MHgxYXhyUEFtWEp4V3lOWWJxWXdpVmZ1Njoyc0EyNGxoSzBKRWdvNFlsRjd4c3pmYnZPV0M3UzZlSDJwcTVSWm8zZTdHTjdEY3JHSkZoNFcyckdsNXJ4N2ZCMlpPaFJHQ2tIU21WQjM0NlEyVVk3blZObzUzUVNMaWlWVXlzWTlOWE9ZdzZ4Uk43NEVMOE5SYW5haDJuUU42Tw==",
