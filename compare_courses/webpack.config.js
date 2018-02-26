@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   context: __dirname + '/client',
-  entry: './index.js',
+  entry: './index.jsx',
   module: {
     loaders: [
       {
@@ -11,13 +11,13 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'env']
+          presets: ['react', 'es2015']
         },
       },
     ],
   },
   output: {
     path: __dirname + '/public',
-    filename: 'app.js',
+    filename: 'bundle.js',
   }
 };
