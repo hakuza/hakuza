@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import { Reviews } from "./reviews.jsx";
 
-class App extends React.Component {
+export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      state: true
+      reviews: null,
+      id: null
     };
   }
 
@@ -14,7 +16,12 @@ class App extends React.Component {
     axios
       .get("/feedback")
       .then(res => {
-        console.log(res.data);
+        const data = res.data;
+        this.setState({
+          reviews: data,
+          id: res.data[0].courseId
+        });
+        console.log(this.state.reviews);
       })
       .catch(err => {
         console.log(err);
@@ -22,10 +29,15 @@ class App extends React.Component {
   }
 
   render() {
+    if (this.state.reviews === null) {
+      return <h1>Loading...</h1>;
+    }
     return (
       <div>
-        <h3>Student Feedback</h3>
+        <h2>Featured Review</h2>
+        <h2>Student Feedback</h2>
         <h3>Reviews</h3>
+        <Reviews reviews={this.state.reviews} id={this.state.id} />
       </div>
     );
   }
