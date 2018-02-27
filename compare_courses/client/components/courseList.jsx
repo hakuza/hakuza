@@ -1,12 +1,22 @@
 import React from 'react';
 import Course from './course.jsx';
 
-export default class CourseList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+// export default class CourseList extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
 
-  render() {
-    return <div>Courses</div>;
-  }
+//   render() {
+//     return <div>Courses</div>;
+//   }
+// }
+
+function CourseList({ courses }) {
+  return (
+    <div className="courseList">
+      {courses.map(course => <Course key={course} course={course} />)}
+    </div>
+  );
 }
+
+export default CourseList;

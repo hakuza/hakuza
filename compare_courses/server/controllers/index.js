@@ -16,7 +16,8 @@ module.exports = {
           res.end(JSON.stringify(dbResponse));
         })
         .catch(err => {
-          throw err;
+          res.writeHead(404);
+          res.end(err);
         });
     },
   },
