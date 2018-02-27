@@ -8,7 +8,7 @@ export class App extends React.Component {
     super(props);
     this.state = {
       reviews: null,
-      id: null
+      id: 1383496
     };
   }
 
@@ -16,12 +16,15 @@ export class App extends React.Component {
     axios
       .get("/feedback")
       .then(res => {
-        const data = res.data;
+        const data = {};
+        res.data.map(elem => {
+          data[elem.courseId] = elem.reviews;
+        });
+        console.log(data);
         this.setState({
           reviews: data,
           id: res.data[0].courseId
         });
-        console.log(this.state.reviews);
       })
       .catch(err => {
         console.log(err);
