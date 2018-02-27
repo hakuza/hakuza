@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CourseList from './components/courseList.jsx';
-import dbHelper from './dbHelper.js';
+import serverHelper from './serverHelper.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    dbHelper
+    serverHelper
       .get(12)
       .then(response => {
         let similarCourses = response.data.map(obj => obj.course2_id);
