@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 
-export class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,8 +22,13 @@ export class App extends React.Component {
   }
 
   render() {
-    return <div />;
+    return (
+      <div>
+        <h3>Student Feedback</h3>
+        <h3>Reviews</h3>
+      </div>
+    );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("root"));
