@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 
 const connection = mysql.createConnection({
-  user: 'student',
-  password: 'student',
-  database: 'compare'
+  user: 'delphiki',
+  password: 'pword123',
+  database: 'compare',
 });
 
 const sendQuery = function(query) {
@@ -13,7 +13,7 @@ const sendQuery = function(query) {
       resolve(result);
     });
   });
-}
+};
 
 exports.connection = connection;
 exports.query = sendQuery;
