@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const request = require("request-promise");
-mongoose.connect("mongodb://localhost/udemy");
+const mongoose = require('mongoose');
+const request = require('request-promise');
+mongoose.connect('mongodb://localhost/udemy');
 
 const udemySchema = mongoose.Schema({
   //create schema
@@ -19,4 +19,4 @@ const udemySchema = mongoose.Schema({
   num_reviews: Number
 });
 
-module.exports = mongoose.model("Udemy", udemySchema);
+module.exports = mongoose.model('Udemy', udemySchema);
