@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 const rp = require('request-promise');
 const db = require('./index.js');
-const queryCreator = require('../models/query.js');
+const queryCreator = require('./query.js');
 // const request = require('request');
 // var Promise = require('bluebird');
 
