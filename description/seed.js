@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const request = require("request-promise");
-mongoose.connect("mongodb://localhost/udemy");
+const mongoose = require('mongoose');
+const request = require('request-promise');
+mongoose.connect('mongodb://localhost/udemy');
 
 const udemySchema = mongoose.Schema({
   //create schema
@@ -19,13 +19,14 @@ const udemySchema = mongoose.Schema({
   num_reviews: Number
 });
 
-const Udemy = mongoose.model("Udemy", udemySchema);
+const Udemy = mongoose.model('Udemy', udemySchema);
 
 let options = {
   url: `https://www.udemy.com/api-2.0/courses/?page_size=200&search=programming&ordering=highest-rated&fields[course]=title,headline,num_lectures,num_subscribers,created,visible_instructors,avg_rating,price,num_reviews,description`,
   headers: {
-    Authorization: "Basic YnFuRUljaHNndUFjdk9MbHlEYUFOa2RJV1d1aXpyOWFldDRzUE5NYzpBVFRkTzB6dW5HeFB4cUxtMWlyUWw4Q0VTTlRIaGZ2Vlh3Y3RUckR6cHNRM25zTUF0bnliTUQ2U3hYNHVSMUNQZ0tIcjUyWFdFeTZZendtVUZuRHFVZ3UwTVFPcFpvbjlLODZOTHcwNURha1U1bElrVTZpQ24yZmhKMkhEMlI3Nw==",
-    Accept: "application/json, text/plain, */*"
+    Authorization:
+      'Basic YnFuRUljaHNndUFjdk9MbHlEYUFOa2RJV1d1aXpyOWFldDRzUE5NYzpBVFRkTzB6dW5HeFB4cUxtMWlyUWw4Q0VTTlRIaGZ2Vlh3Y3RUckR6cHNRM25zTUF0bnliTUQ2U3hYNHVSMUNQZ0tIcjUyWFdFeTZZendtVUZuRHFVZ3UwTVFPcFpvbjlLODZOTHcwNURha1U1bElrVTZpQ24yZmhKMkhEMlI3Nw==',
+    Accept: 'application/json, text/plain, */*'
   }
 };
 

@@ -1,6 +1,6 @@
-import React from "react";
-import axios from "axios";
-import Feedback from "./Feedback.jsx";
+import React from 'react';
+import axios from 'axios';
+import Feedback from './Feedback.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -8,12 +8,12 @@ export default class App extends React.Component {
 
     this.state = {
       course: [],
-      currentCourse: ""
+      currentCourse: ''
     };
   }
 
   componentWillMount() {
-    axios.get("/description").then(response => {
+    axios.get('/description').then(response => {
       this.setState({
         course: response.data,
         currentCourse: response.data[16]
