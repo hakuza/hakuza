@@ -15,7 +15,8 @@ class App extends React.Component {
     serverHelper
       .get(12)
       .then(response => {
-        let similarCourses = response.data.map(obj => obj.course2_id);
+        console.log(response.data);
+        let similarCourses = response.data.map(obj => obj[0]);
         this.setState({
           courses: similarCourses,
         });
