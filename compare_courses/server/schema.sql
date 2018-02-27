@@ -3,10 +3,9 @@ USE compare;
 
 DROP TABLE IF EXISTS similar_courses;
 CREATE TABLE similar_courses (
-  id INTEGER NOT NULL AUTO_INCREMENT,
   course1_id INTEGER NOT NULL,
   course2_id INTEGER NOT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY (course1_id, course2_id)
 );
 
 DROP TABLE IF EXISTS courses;
