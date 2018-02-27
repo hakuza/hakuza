@@ -7,14 +7,16 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      course: {}
+      course: [],
+      currentCourse: ""
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     axios.get("/description").then(response => {
       this.setState({
-        course: response.data
+        course: response.data,
+        currentCourse: response.data[16]
       });
     });
   }
@@ -22,12 +24,12 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Title Goes Here</h1>
-        <h2>Headline goes here</h2>
-        <Feedback />
-        <h4>Created by ....</h4>
-        <h4>Last Updated</h4>
-        <h4>Language</h4>
+        <h1>{this.state.currentCourse.title}</h1>
+        <h2>{this.state.currentCourse.headline}</h2>
+        <Feedback currentCourse={this.state.currentCourse} />
+        <h4>{this.state.currentCourse.name}</h4>
+        <h4>{new Date(this.state.currentCourse.created).toDateString()}</h4>
+        <h4>English</h4>
         <h4>Closed captioning</h4>
       </div>
     );
