@@ -1,5 +1,12 @@
 const _ = require('lodash');
 
+exports.getSimilarCourses = courseID =>
+  `
+    SELECT course2_id 
+    FROM similar_courses
+    WHERE course1_id = ${courseID}
+  `;
+
 exports.insertCourse = item =>
   `
     INSERT INTO courses (
