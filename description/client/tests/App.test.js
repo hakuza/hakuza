@@ -1,13 +1,12 @@
 import { shallow, mount } from 'enzyme';
 import React from 'react';
 import App from '../components/App.jsx';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-ReactDOM.render(<App />, document.getElementById('description'));
+Enzyme.configure({ adapter: new Adapter() });
 
-it('works and doesnt crash', () => {
+it('works', () => {
   const wrap = mount(<App />);
   expect(wrap).toMatchSnapshot();
 });
