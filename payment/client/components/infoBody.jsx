@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+// import regeneratorRuntime from 'regenerator-runtime'
 import Buy from './buy.jsx';
 import Cart from './cart.jsx';
 import Coupon from './coupon.jsx';
@@ -12,9 +13,10 @@ class InfoBody extends React.Component {
   }
 
   componentDidMount () {
+    var context = this;
     Axios.get('http://127.0.0.1:3003/courses')
     .then(function (response){
-      this.setState({courses:response.data, courseToPurchase: response.data[0]})  
+      context.setState({courses:response.data, courseToPurchase: response.data[0]})  
     })
     .catch(function(err){
       console.error(err) 

@@ -11,10 +11,10 @@ class Payment extends React.Component {
 	}
 
 	componentDidMount () {
+    var context = this;
 	  Axios.get('http://127.0.0.1:3003/courses')
     .then(function (response){
-      console.log(response.data)
-      // this.setState({courses:response.data, courseToPurchase: response.data[0]})  
+      context.setState({courses:response.data, courseToPurchase: response.data[0]})  
     })
     .catch(function(err){
       console.error(err) 
@@ -24,7 +24,9 @@ class Payment extends React.Component {
   render () {
     return (
     	<div className="payment-main">
-    	  <Preview />
+    	  <Preview 
+          thumbnail= {this.state}
+        />
     	  <InfoBody />
     	</div>
     );
