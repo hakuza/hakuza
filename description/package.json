@@ -1,11 +1,15 @@
 {
-  "name": "hakuza",
+  "name": "hakuza/udemy",
   "version": "",
   "description": "Udemy Description Module",
   "author": "James Davidson",
   "license": "MIT",
   "engines": {
     "node": ">=6.13.0"
+  },
+  "jest": {
+    "setupFiles": ["../description/client/tests/setup.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "scripts": {
     "start": "nodemon ./server/index.js",
