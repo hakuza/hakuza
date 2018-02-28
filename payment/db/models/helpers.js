@@ -4,4 +4,5 @@ const findAll = function (callback) {
   model.find({},callback)
 }
 
+
 module.exports = findAll
