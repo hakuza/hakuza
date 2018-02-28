@@ -1,11 +1,16 @@
 {
-  "name": "hakuza",
+  "name": "hakuza/udemy",
   "version": "",
   "description": "Udemy Description Module",
   "author": "James Davidson",
   "license": "MIT",
   "engines": {
     "node": ">=6.13.0"
+  },
+  "jest": {
+    "setupFiles": ["./client/tests/setup.js"],
+
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "scripts": {
     "start": "nodemon ./server/index.js",
@@ -31,6 +36,7 @@
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
     "eslint": "^4.18.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",

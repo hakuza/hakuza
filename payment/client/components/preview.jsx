@@ -18,11 +18,5 @@ var Preview = function (props) {
 }
 
 
-
-
-
-
-
-
 export default Preview
 

@@ -1,7 +1,12 @@
-function sum(a, b) {
-  return a + b;
-}
+import { shallow, mount } from 'enzyme';
+import React from 'react';
+import App from '../components/App.jsx';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+Enzyme.configure({ adapter: new Adapter() });
+
+it('works', () => {
+  const wrap = mount(<App />);
+  console.log('im changing test');
 });

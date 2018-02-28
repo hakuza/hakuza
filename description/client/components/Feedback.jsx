@@ -9,6 +9,7 @@ const Feedback = props => {
     <div>
       <h4>histogram</h4>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <h4>{console.log(props)}</h4>
       <h4>{props.currentCourse.avg_rating}</h4>
       <h4>{props.currentCourse.num_subscribers}</h4>
@@ -17,6 +18,11 @@ const Feedback = props => {
       <h4>ratings number</h4>
       <h4>students enrolled</h4>
 >>>>>>> feature
+=======
+      <h4>{props.currentCourse.avg_rating}</h4>
+      <h4>({props.currentCourse.num_reviews} ratings)</h4>
+      <h4>{props.currentCourse.num_subscribers} students enrolled</h4>
+>>>>>>> master
     </div>
   );
 };
