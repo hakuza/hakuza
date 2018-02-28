@@ -1,4 +1,5 @@
 import React from "react";
+import { Picture } from "./reviews_components/picture.jsx";
 
 export class Reviews extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ export class Reviews extends React.Component {
             if (elem.content) {
               return (
                 <div className="indivContainer" key={i}>
+                  <Picture name={elem.user.display_name} />
                   <div className="user" key={i + 1}>
                     {elem.user.display_name}
                   </div>
