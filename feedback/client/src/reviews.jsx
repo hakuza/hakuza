@@ -10,20 +10,23 @@ export class Reviews extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="reviewList">
+      <div className="container">
+        <div className="userList">
           {this.state.courseReview.map((elem, i) => {
             if (elem.content) {
               return (
-                <div className="indivReviews" key={i}>
-                  {elem.content}
+                <div className="indivContainer" key={i}>
+                  <div className="user" key={i + 1}>
+                    {elem.user.display_name}
+                  </div>
+                  <div className="indivReviews" key={i + 2}>
+                    {elem.content}
+                  </div>
                 </div>
               );
             }
           })}
         </div>
-        <div className="user" />
-        {/* {this.state.courseReview} */}
       </div>
     );
   }
