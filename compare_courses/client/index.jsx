@@ -13,11 +13,11 @@ class App extends React.Component {
   }
 
   getCourses(id) {
-    console.log(id);
+    // console.log(id);
     serverHelper
       .get(id)
       .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         let similarCourses = response.data.map(obj => obj[0]);
         this.setState({
           currId: id,
