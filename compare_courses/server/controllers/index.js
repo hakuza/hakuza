@@ -15,6 +15,7 @@ module.exports = {
           let dbRequests = courseIDs.map(row =>
             db.query(queryCreator.getCourse(row.course2_id))
           );
+          dbRequests.unshift(db.query(queryCreator.getCourse(req.query.id)));
           return Promise.all(dbRequests);
         })
         .then(courses => {
