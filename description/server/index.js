@@ -1,10 +1,10 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const Udemy = require("../database/index.js");
+const Udemy = require('../database/index.js');
 
-app.use(express.static("./public"));
+app.use(express.static('./public'));
 
-app.get("/description", (request, response) => {
+app.get('/description', (request, response) => {
   Udemy.find((err, results) => {
     if (err) {
       response.send(500);
@@ -15,5 +15,5 @@ app.get("/description", (request, response) => {
 });
 
 app.listen(3001, () => {
-  console.log("Listening on port 3001");
+  console.log('Listening on port 3001');
 });

@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const model = require('../index.js')
+const findAll = function (callback) {
+  model.find({},callback)
+}
 
-// const findAll = function () {
-
-// }
-
-//build out a findOne helper function
+module.exports = findAll
