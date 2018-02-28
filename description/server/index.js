@@ -14,6 +14,8 @@ app.get('/description', (request, response) => {
   });
 });
 
+app.get("/description", (response, request) => {});
+
 app.listen(3001, () => {
   console.log('Listening on port 3001');
 });

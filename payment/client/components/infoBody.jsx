@@ -5,6 +5,7 @@ import Cart from './cart.jsx';
 import Coupon from './coupon.jsx';
 
 
+
 class InfoBody extends React.Component {
   constructor (props) {
     super(props);
@@ -33,11 +34,10 @@ class InfoBody extends React.Component {
       </div>
     )
   }
+
 }
 
-
-
-
-
-
 export default InfoBody
+
+
+

@@ -13,7 +13,8 @@ class Payment extends React.Component {
 	componentDidMount () {
 	  Axios.get('http://127.0.0.1:3003/courses')
     .then(function (response){
-      this.setState({courses:response.data, courseToPurchase: response.data[0]})  
+      console.log(response.data)
+      // this.setState({courses:response.data, courseToPurchase: response.data[0]})  
     })
     .catch(function(err){
       console.error(err) 
