@@ -33,6 +33,7 @@ let options = {
 //seeds courses table with 200 courses
 //ordered by most-reviewed
 //ids: 1-200
+
 rp(options)
   .then(body => {
     // console.log(body);
@@ -70,9 +71,8 @@ rp(options)
 const seedSimilar = function() {
   let inserts = [];
   for (let i = 1; i <= 200; i++) {
-    for (let j = 1; j <= 10; j++) {
-      // console.log(`${i}, ${j}`);
-      inserts.push(db.query(queryCreator.insertSimilar(i, j)));
+    for (let j = i; j < i + 10; j++) {
+      inserts.push(db.query(queryCreator.insertSimilar(i, j % 200 + 1)));
     }
   }
   return Promise.all(inserts);

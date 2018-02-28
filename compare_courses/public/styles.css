@@ -22,6 +22,11 @@
   width: 750px;
 }
 
+.course:hover {
+  cursor: pointer;
+  background-color: #e8e9eb;
+}
+
 .thumbnail {
   height: 70px;
   position: relative;

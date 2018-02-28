@@ -1,20 +1,12 @@
 import React from 'react';
 import Course from './course.jsx';
 
-// export default class CourseList extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   render() {
-//     return <div>Courses</div>;
-//   }
-// }
-
-function CourseList({ courses }) {
+function CourseList({ courses, onclick }) {
   return (
     <div className="course-list">
-      {courses.map(course => <Course key={course.id} course={course} />)}
+      {courses.map(course => (
+        <Course key={course.id} course={course} onclick={onclick} />
+      ))}
     </div>
   );
 }
