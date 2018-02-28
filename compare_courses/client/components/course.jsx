@@ -3,7 +3,7 @@ import _ from 'lodash';
 
 function Course({ course, onclick }) {
   return (
-    <div className="course" onClick={onclick.bind(this, course.id)}>
+    <div className="course" onClick={onclick.bind(null, course.id)}>
       <img className="thumbnail" src={course.thumbnail_url} />
       <div className="course-info">
         <div className="title">
