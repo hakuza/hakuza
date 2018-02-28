@@ -39,10 +39,7 @@ export class App extends React.Component {
       <div>
         <h2>Featured Review</h2>
         <h2>Student Feedback</h2>
-        <h3>Reviews</h3>
-        <div className="reviewsContainer">
-          <Reviews reviews={this.state.reviews} id={this.state.id} />
-        </div>
+        <Reviews reviews={this.state.reviews} id={this.state.id} />
       </div>
     );
   }
