@@ -6,26 +6,24 @@ export class Reviews extends React.Component {
     super(props);
     this.state = {
       courseReview: props.reviews[props.id],
-      searchResults: []
+      searchResults: props.reviews[props.id]
     };
     this.handleSearch = this.handleSearch.bind(this);
   }
 
   handleSearch(e) {
-    // loop through the reviews for (key in obj)
     if (e.key === "Enter") {
       var filteredReviews = this.state.courseReview.filter(review => {
         if (review.content) {
           var target = e.target.value.toLowerCase();
           var content = review.content.toLowerCase();
-          return content.match(target);
+          var author = review.user.display_name.toLowerCase();
+          return content.match(target) || author.match(target); //returns matches with author or content
         }
       });
       this.setState({
         searchResults: filteredReviews
       });
-      // if the content matches the target then return filtered array
-      // set the state = filtered list
     }
   }
 
