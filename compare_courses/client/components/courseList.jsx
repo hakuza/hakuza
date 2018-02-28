@@ -13,7 +13,7 @@ import Course from './course.jsx';
 
 function CourseList({ courses }) {
   return (
-    <div className="courseList">
+    <div className="course-list">
       {courses.map(course => <Course key={course.id} course={course} />)}
     </div>
   );
