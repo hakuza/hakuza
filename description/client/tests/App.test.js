@@ -1,7 +1,8 @@
-function sum(a, b) {
-  return a + b;
-}
+import { shallow, mount } from 'enzyme';
+import React from 'react';
+import App from '../components/App.jsx';
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+it('works', () => {
+  const wrap = mount(<App />);
+  expect(wrap).toMatchSnapshot();
 });
