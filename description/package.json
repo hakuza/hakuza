@@ -1,5 +1,5 @@
 {
-  "name": "hakuza",
+  "name": "hakuza/udemy",
   "version": "",
   "description": "Udemy Description Module",
   "author": "James Davidson",
@@ -9,6 +9,7 @@
   },
   "jest": {
     "setupFiles": ["./client/tests/setup.js"],
+
     "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "scripts": {
