@@ -8,28 +8,28 @@ configure({ adapter: new Adapter() });
 // The mount function is used to render our component and then
 // allow us to inspect the output and make assertions on it.
 
-test("Reviews component renders the reviews list", () => {
-  const dummyData = {
-    364426: [
-      {
-        _class: "course_review",
-        id: 14205914,
-        title: "",
-        content: "THIS IS A TEST",
-        rating: 4.5,
-        created: "2018-02-27T11:38:22Z",
-        modified: "2018-02-27T16:12:36Z",
-        user: {
-          _class: "user",
-          id: 44791238,
-          title: "EQUUS BASS 770",
-          name: "EB770",
-          display_name: "EQUUS BASS 770"
-        }
+const dummyData = {
+  364426: [
+    {
+      _class: "course_review",
+      id: 14205914,
+      title: "",
+      content: "THIS IS A TEST",
+      rating: 4.5,
+      created: "2018-02-27T11:38:22Z",
+      modified: "2018-02-27T16:12:36Z",
+      user: {
+        _class: "user",
+        id: 44791238,
+        title: "EQUUS BASS 770",
+        name: "EB770",
+        display_name: "EQUUS BASS 770"
       }
-    ]
-  };
+    }
+  ]
+};
 
+test("Reviews component renders the reviews list", () => {
   const wrapper = mount(<Reviews reviews={dummyData} id={364426} />);
 
   const p = wrapper.find(".indivReviews");
