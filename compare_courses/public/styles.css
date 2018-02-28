@@ -4,27 +4,48 @@
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
-.course-list > div:not(:last-child) {
-  border-bottom: solid 15px transparent;
-  box-shadow: 0 2px 0 -1px #d3d3d3;
+.compare-header {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 15px;
 }
 
 .course-list > div:last-child {
   margin-bottom: 10px;
 }
 
-.course-list > div:not(:first-child) {
+.course-list > div {
+  border-bottom: solid 15px transparent;
   border-top: solid 15px transparent;
+  box-shadow: 0 -2px 0 -1px #d3d3d3;
+  width: 750px;
+}
+
+.course-list > div:nth-child(2) {
+  box-shadow: 0 -4px 0 -1px #d3d3d3;
+}
+
+.course-list > div:hover {
+  cursor: pointer;
+  background-color: #e8e9eb;
+}
+
+.course-list > div:not(:first-child) > .curr-course {
+  display: none;
+}
+
+.course-list > div:first-child:hover {
+  cursor: default;
+  background-color: transparent;
 }
 
 .course {
   display: flex;
-  width: 750px;
 }
 
-.course:hover {
-  cursor: pointer;
-  background-color: #e8e9eb;
+.curr-course {
+  font-size: 11px;
+  margin: -10px 0px 15px 2px;
 }
 
 .thumbnail {
@@ -53,10 +74,6 @@
 
 .updatedAt {
   font-size: 13px;
-}
-
-.language {
-  padding: 22px 0 0 0;
 }
 
 .course-info {

@@ -36,7 +36,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <h3>Compare to Other Python Courses</h3>
+        <div className="compare-header">Compare to Other Python Courses</div>
         <CourseList
           courses={this.state.courses}
           onclick={this.getCourses.bind(this)}
