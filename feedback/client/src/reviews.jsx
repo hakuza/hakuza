@@ -1,5 +1,6 @@
 import React from "react";
 import { Picture } from "./reviews_components/picture.jsx";
+import { Search } from "./reviews_components/search.jsx";
 
 export class Reviews extends React.Component {
   constructor(props) {
@@ -30,14 +31,7 @@ export class Reviews extends React.Component {
   render() {
     return (
       <div className="container">
-        <h3>Reviews</h3>
-        <input
-          type="text"
-          className="searchField"
-          onKeyUp={this.handleSearch}
-          placeholder="Search in Reviews"
-        />
-        <a className="searchButton">Search</a>
+        <Search search={this.handleSearch} />
         <div className="userList">
           {this.state.searchResults.map((elem, i) => {
             if (elem.content) {
