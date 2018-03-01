@@ -7,15 +7,26 @@
   border-color: blue;
 }
 
+#searchContainer {
+  display: flex;
+  margin: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: green;
+  width: 800px;
+}
+
 h3 {
-  justify-content: flex-start;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
+  width: 300px;
 }
 
 #searchField {
   justify-content: space-between;
+  flex-direction: row;
   margin: 20px 0px 20px 20px;
   width: 200px;
   height: 20px;
@@ -23,6 +34,7 @@ h3 {
 
 .searchButton {
   justify-content: space-between;
+  flex-direction: row;
   margin: 20px 0px 20px 0px;
   width: 60px;
   height: 20px;
@@ -37,6 +49,7 @@ h3 {
   border-style: solid;
   border-width: 1px;
   border-color: red;
+  width: 800px;
 }
 
 .userPicture {

@@ -2,15 +2,28 @@ import React from "react";
 
 export function Search(props) {
   return (
-    <div>
-      <h3>Reviews</h3>
-      <input
-        type="text"
-        id="searchField"
-        onKeyUp={props.search}
-        placeholder="Search in Reviews"
-      />
-      <a className="searchButton">Search</a>
+    <div id="searchContainer">
+      {props.header ? (
+        <h3>
+          Reviews mentioning <i>{`"${props.header}"`}</i>
+        </h3>
+      ) : (
+        <h3>Reviews</h3>
+      )}
+      <form>
+        <input
+          type="search"
+          id="searchField"
+          placeholder="Search in Reviews"
+          onChange={props.change}
+          onKeyUp={props.search}
+        />
+        <input //have to make this work somehow
+          type="submit"
+          className="searchButton"
+          onClick={props.search}
+        />
+      </form>
     </div>
   );
 }

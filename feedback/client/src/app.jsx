@@ -23,7 +23,7 @@ export class App extends React.Component {
         console.log(data);
         this.setState({
           reviews: data,
-          id: res.data[0].courseId
+          id: res.data[1].courseId
         });
       })
       .catch(err => {

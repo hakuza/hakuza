@@ -7,19 +7,34 @@ export class Reviews extends React.Component {
     super(props);
     this.state = {
       courseReview: props.reviews[props.id],
-      searchResults: props.reviews[props.id]
+      searchResults: props.reviews[props.id],
+      input: "",
+      header: ""
     };
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      input: e.target.value.toLowerCase()
+    });
   }
 
   handleSearch(e) {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" || e.type === "click") {
+      this.setState({
+        header: e.target.value || this.state.input
+      });
       var filteredReviews = this.state.courseReview.filter(review => {
         if (review.content) {
+          var input = this.state.input;
           var target = e.target.value.toLowerCase();
           var content = review.content.toLowerCase();
           var author = review.user.display_name.toLowerCase();
-          return content.match(target) || author.match(target); //returns matches with author or content
+          return (
+            content.match(target || input) || author.match(target || input)
+          ); //returns matches with author or content
         }
       });
       this.setState({
@@ -31,7 +46,11 @@ export class Reviews extends React.Component {
   render() {
     return (
       <div className="container">
-        <Search search={this.handleSearch} />
+        <Search
+          search={this.handleSearch}
+          header={this.state.header}
+          change={this.handleChange}
+        />
         <div className="userList">
           {this.state.searchResults.map((elem, i) => {
             if (elem.content) {
