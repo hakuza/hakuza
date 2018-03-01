@@ -1,8 +1,9 @@
 import React from "react";
 import { Picture } from "./reviews_components/picture.jsx";
 import { Search } from "./reviews_components/search.jsx";
+import { Ratings } from "./reviews_components/ratings.jsx";
 
-export class Reviews extends React.Component {
+export class Feedback extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,7 +35,7 @@ export class Reviews extends React.Component {
           var author = review.user.display_name.toLowerCase();
           return (
             content.match(target || input) || author.match(target || input)
-          ); //returns matches with author or content
+          );
         }
       });
       this.setState({
@@ -45,34 +46,39 @@ export class Reviews extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <Search
-          search={this.handleSearch}
-          header={this.state.header}
-          change={this.handleChange}
-        />
-        <div className="userList">
-          {this.state.searchResults.map((elem, i) => {
-            if (elem.content) {
-              return (
-                <div className="indivContainer" key={i}>
-                  <Picture name={elem.user.display_name} />
-                  <div className="user" key={i + 1}>
-                    <div className="time" key={i + 2}>
-                      {elem.created}
+      <div>
+        <div className="ratings_container">
+          <Ratings reviews={this.state.courseReview} />
+        </div>
+        <div className="reviews_container">
+          <Search
+            search={this.handleSearch}
+            header={this.state.header}
+            change={this.handleChange}
+          />
+          <div className="userList">
+            {this.state.searchResults.map((elem, i) => {
+              if (elem.content) {
+                return (
+                  <div className="indivContainer" key={i}>
+                    <Picture name={elem.user.display_name} />
+                    <div className="user" key={i + 1}>
+                      <div className="time" key={i + 2}>
+                        {elem.created}
+                      </div>
+                      {elem.user.display_name}
                     </div>
-                    {elem.user.display_name}
-                  </div>
-                  <div className="indivReviews" key={i + 3}>
-                    <div className="indivRating" key={i + 4}>
-                      Rating: {elem.rating}
+                    <div className="indivReviews" key={i + 3}>
+                      <div className="indivRating" key={i + 4}>
+                        Rating: {elem.rating}
+                      </div>
+                      {elem.content}
                     </div>
-                    {elem.content}
                   </div>
-                </div>
-              );
-            }
-          })}
+                );
+              }
+            })}
+          </div>
         </div>
       </div>
     );

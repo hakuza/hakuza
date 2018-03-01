@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import { Reviews } from "./reviews.jsx";
+import { Feedback } from "./reviews.jsx";
 
 export class App extends React.Component {
   constructor(props) {
@@ -38,8 +38,7 @@ export class App extends React.Component {
     return (
       <div>
         <h2>Featured Review</h2>
-        <h2>Student Feedback</h2>
-        <Reviews reviews={this.state.reviews} id={this.state.id} />
+        <Feedback reviews={this.state.reviews} id={this.state.id} />
       </div>
     );
   }
