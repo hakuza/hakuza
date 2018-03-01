@@ -47,9 +47,8 @@ export class Feedback extends React.Component {
   render() {
     return (
       <div>
-        <div className="ratings_container">
-          <Ratings reviews={this.state.courseReview} />
-        </div>
+        <h2>Student Feedback</h2>
+        <Ratings reviews={this.state.courseReview} />
         <div className="reviews_container">
           <Search
             search={this.handleSearch}
