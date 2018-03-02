@@ -1,6 +1,8 @@
 import React from "react";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faStar from "@fortawesome/fontawesome-free-solid/faStar";
+import StarRatings from "react-star-ratings";
+import { Stars } from "./stars.jsx";
 
 export class Ratings extends React.Component {
   constructor(props) {
@@ -87,9 +89,13 @@ export class Ratings extends React.Component {
       <div className="ratings_container">
         <div className="avg_rating_container">
           <a id="avgRatingNum">{this.state.avgRating}</a>
-          <a className="stars" id="avgStar">
-            {this.state.stars}
-          </a>
+          <StarRatings
+            rating={this.state.avgRating}
+            starRatedColor="#f4c150"
+            numberOfStars={5}
+            starDimension="20px"
+            starSpacing="1px"
+          />
           <a id="avgRatingText">Average Rating</a>
         </div>
         <div className="ratings_breakdown_container">
@@ -97,9 +103,13 @@ export class Ratings extends React.Component {
             <div className="bar" id="fiveBar">
               <span className="fill" id="fiveFill" style={this.state.five} />
             </div>
-            <a className="stars" id="fiveStar">
-              {this.state.stars}
-            </a>
+            <StarRatings
+              rating={5}
+              starRatedColor="#f4c150"
+              numberOfStars={5}
+              starDimension="20px"
+              starSpacing="0px"
+            />
             <a className="percent" id="fivePercent">
               {this.state.five.width}
             </a>
@@ -108,9 +118,13 @@ export class Ratings extends React.Component {
             <div className="bar" id="fourBar">
               <span className="fill" id="fourFill" style={this.state.four} />
             </div>
-            <a className="stars" id="fourStar">
-              {this.state.stars}
-            </a>
+            <StarRatings
+              rating={4}
+              starRatedColor="#f4c150"
+              numberOfStars={5}
+              starDimension="20px"
+              starSpacing="0px"
+            />
             <a className="percent" id="fourPercent">
               {this.state.four.width}
             </a>
@@ -119,9 +133,13 @@ export class Ratings extends React.Component {
             <div className="bar" id="threeBar">
               <span className="fill" id="threeFill" style={this.state.three} />
             </div>
-            <a className="stars" id="threeStar">
-              {this.state.stars}
-            </a>
+            <StarRatings
+              rating={3}
+              starRatedColor="#f4c150"
+              numberOfStars={5}
+              starDimension="20px"
+              starSpacing="0px"
+            />
             <a className="percent" id="threePercent">
               {this.state.three.width}
             </a>
@@ -130,9 +148,13 @@ export class Ratings extends React.Component {
             <div className="bar" id="twoBar">
               <span className="fill" id="twoFill" style={this.state.two} />
             </div>
-            <a className="stars" id="twoStar">
-              {this.state.stars}
-            </a>
+            <StarRatings
+              rating={2}
+              starRatedColor="#f4c150"
+              numberOfStars={5}
+              starDimension="20px"
+              starSpacing="0px"
+            />
             <a className="percent" id="twoPercent">
               {this.state.two.width}
             </a>
@@ -141,9 +163,13 @@ export class Ratings extends React.Component {
             <div className="bar" id="oneBar">
               <span className="fill" id="oneFill" style={this.state.one} />
             </div>
-            <a className="stars" id="oneStar">
-              {this.state.stars}
-            </a>
+            <StarRatings
+              rating={1}
+              starRatedColor="#f4c150"
+              numberOfStars={5}
+              starDimension="20px"
+              starSpacing="0px"
+            />
             <a className="percent" id="onePercent">
               {this.state.one.width}
             </a>

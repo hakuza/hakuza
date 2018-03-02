@@ -10,20 +10,19 @@ export function Search(props) {
       ) : (
         <h3>Reviews</h3>
       )}
-      <form>
-        <input
-          type="search"
-          id="searchField"
-          placeholder="Search in Reviews"
-          onChange={props.change}
-          onKeyUp={props.search}
-        />
-        <input //have to make this work somehow
-          type="submit"
-          className="searchButton"
-          onClick={props.search}
-        />
-      </form>
+
+      <input
+        type="search"
+        id="searchField"
+        placeholder="Search in Reviews"
+        onChange={props.change}
+        onKeyUp={props.search}
+      />
+      <input //have to make this work somehow
+        type="submit"
+        className="searchButton"
+        onClick={props.search}
+      />
     </div>
   );
 }

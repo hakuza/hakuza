@@ -37,7 +37,7 @@ export class App extends React.Component {
     }
     return (
       <div>
-        <h2>Featured Review</h2>
+        <div className="title">Featured Review</div>
         <Feedback reviews={this.state.reviews} id={this.state.id} />
       </div>
     );
