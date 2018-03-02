@@ -1,6 +1,7 @@
 import React from "react";
 import { Picture } from "./reviews_components/picture.jsx";
 import { Ratings } from "./reviews_components/ratings.jsx";
+import { Flag } from "./reviews_components/flag.jsx";
 import StarRatings from "react-star-ratings";
 
 export class Featured extends React.Component {
@@ -43,6 +44,7 @@ export class Featured extends React.Component {
               />
             </div>
             {this.state.reviews.content}
+            <Flag />
           </div>
         </div>
       </div>

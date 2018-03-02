@@ -2,6 +2,7 @@ import React from "react";
 import { Picture } from "./reviews_components/picture.jsx";
 import { Search } from "./reviews_components/search.jsx";
 import { Ratings } from "./reviews_components/ratings.jsx";
+import { Flag } from "./reviews_components/flag.jsx";
 import StarRatings from "react-star-ratings";
 
 export class Feedback extends React.Component {
@@ -95,6 +96,7 @@ export class Feedback extends React.Component {
                         />
                       </div>
                       {elem.content}
+                      <Flag />
                     </div>
                   </div>
                 );
