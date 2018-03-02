@@ -4,11 +4,11 @@ export function Search(props) {
   return (
     <div id="searchContainer">
       {props.header ? (
-        <h3>
+        <div className="subTitle">
           Reviews mentioning <i>{`"${props.header}"`}</i>
-        </h3>
+        </div>
       ) : (
-        <h3>Reviews</h3>
+        <div className="subTitle">Reviews</div>
       )}
 
       <input

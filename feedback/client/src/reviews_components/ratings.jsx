@@ -2,7 +2,6 @@ import React from "react";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faStar from "@fortawesome/fontawesome-free-solid/faStar";
 import StarRatings from "react-star-ratings";
-import { Stars } from "./stars.jsx";
 
 export class Ratings extends React.Component {
   constructor(props) {
@@ -99,7 +98,11 @@ export class Ratings extends React.Component {
           <a id="avgRatingText">Average Rating</a>
         </div>
         <div className="ratings_breakdown_container">
-          <div className="indiv_rating_container">
+          <div
+            className="indiv_rating_container"
+            id={5}
+            onClick={() => this.props.click(5)}
+          >
             <div className="bar" id="fiveBar">
               <span className="fill" id="fiveFill" style={this.state.five} />
             </div>

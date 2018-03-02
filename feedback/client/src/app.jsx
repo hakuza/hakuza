@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import { Feedback } from "./reviews.jsx";
+import { Feedback } from "./feedback.jsx";
 
 export class App extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ export class App extends React.Component {
         console.log(data);
         this.setState({
           reviews: data,
-          id: res.data[2].courseId
+          id: res.data[6].courseId
         });
       })
       .catch(err => {

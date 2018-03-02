@@ -2,6 +2,7 @@ import React from "react";
 import { Picture } from "./reviews_components/picture.jsx";
 import { Search } from "./reviews_components/search.jsx";
 import { Ratings } from "./reviews_components/ratings.jsx";
+import StarRatings from "react-star-ratings";
 
 export class Feedback extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export class Feedback extends React.Component {
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleStarClick = this.handleStarsClick.bind(this);
   }
 
   handleChange(e) {
@@ -44,11 +46,26 @@ export class Feedback extends React.Component {
     }
   }
 
+  // clicking doesn't work right now, it is saying this.state is undefined. fix.
+  handleStarsClick(e) {
+    console.log(e);
+    var filteredStarsReviews = this.state.searchResults.filter(review => {
+      var rating = Math.floor(review.rating);
+      return rating.match(e);
+    });
+    this.setState({
+      searchResults: filteredStarsReviews
+    });
+  }
+
   render() {
     return (
       <div>
         <div className="title">Student Feedback</div>
-        <Ratings reviews={this.state.courseReview} />
+        <Ratings
+          reviews={this.state.courseReview}
+          click={this.handleStarsClick}
+        />
         <div className="reviews_container">
           <Search
             search={this.handleSearch}
@@ -69,7 +86,13 @@ export class Feedback extends React.Component {
                     </div>
                     <div className="indivReviews" key={i + 3}>
                       <div className="indivRating" key={i + 4}>
-                        Rating: {elem.rating}
+                        <StarRatings
+                          rating={elem.rating}
+                          starRatedColor="#f4c150"
+                          numberOfStars={5}
+                          starDimension="20px"
+                          starSpacing="1px"
+                        />
                       </div>
                       {elem.content}
                     </div>

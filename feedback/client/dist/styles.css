@@ -101,6 +101,16 @@
   width: 300px;
 }
 
+.subTitle {
+  justify-content: space-between;
+  flex-direction: row;
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  height: 20px;
+  width: 300px;
+}
+
 #searchField {
   justify-content: space-between;
   flex-direction: row;
