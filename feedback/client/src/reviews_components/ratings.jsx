@@ -1,21 +1,39 @@
 import React from "react";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import faStar from "@fortawesome/fontawesome-free-solid/faStar";
 
 export class Ratings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       reviews: props.reviews,
+      stars: null,
       avgRating: null,
-      five: null,
-      four: null,
-      three: null,
-      two: null,
-      one: null
+      five: {
+        width: null
+      },
+      four: {
+        width: null
+      },
+      three: {
+        width: null
+      },
+      two: {
+        width: null
+      },
+      one: {
+        width: null
+      }
     };
   }
 
   componentWillMount() {
+    var stars = [];
+    for (var i = 0; i < 5; i++) {
+      stars.push(<FontAwesomeIcon icon={faStar} className="star" />);
+    }
     var totalSum = 0;
+    var totalNumRatings = 0;
     var five = 0;
     var four = 0;
     var three = 0;
@@ -39,17 +57,28 @@ export class Ratings extends React.Component {
         one += 1;
       }
       totalSum += rating;
+      totalNumRatings += 1;
     });
     var avgRating = totalSum / this.state.reviews.length;
     var roundedAvgRating = Math.round(avgRating * 10) / 10;
-    console.log(five, four, three, two, one);
     this.setState({
       avgRating: roundedAvgRating,
-      five: five,
-      four: four,
-      three: three,
-      two: two,
-      one: one
+      stars: stars,
+      five: {
+        width: `${Math.round(five / totalNumRatings * 100)}%`
+      },
+      four: {
+        width: `${Math.round(four / totalNumRatings * 100)}%`
+      },
+      three: {
+        width: `${Math.round(three / totalNumRatings * 100)}%`
+      },
+      two: {
+        width: `${Math.round(two / totalNumRatings * 100)}%`
+      },
+      one: {
+        width: `${Math.round(one / totalNumRatings * 100)}%`
+      }
     });
   }
 
@@ -58,14 +87,67 @@ export class Ratings extends React.Component {
       <div className="ratings_container">
         <div className="avg_rating_container">
           <a id="avgRatingNum">{this.state.avgRating}</a>
+          <a className="stars" id="avgStar">
+            {this.state.stars}
+          </a>
           <a id="avgRatingText">Average Rating</a>
         </div>
         <div className="ratings_breakdown_container">
-          <a className="bar">{this.state.five}</a>
-          <a className="bar">{this.state.four}</a>
-          <a className="bar">{this.state.three}</a>
-          <a className="bar">{this.state.two}</a>
-          <a className="bar">{this.state.one}</a>
+          <div className="indiv_rating_container">
+            <div className="bar" id="fiveBar">
+              <span className="fill" id="fiveFill" style={this.state.five} />
+            </div>
+            <a className="stars" id="fiveStar">
+              {this.state.stars}
+            </a>
+            <a className="percent" id="fivePercent">
+              {this.state.five.width}
+            </a>
+          </div>
+          <div className="indiv_rating_container">
+            <div className="bar" id="fourBar">
+              <span className="fill" id="fourFill" style={this.state.four} />
+            </div>
+            <a className="stars" id="fourStar">
+              {this.state.stars}
+            </a>
+            <a className="percent" id="fourPercent">
+              {this.state.four.width}
+            </a>
+          </div>
+          <div className="indiv_rating_container">
+            <div className="bar" id="threeBar">
+              <span className="fill" id="threeFill" style={this.state.three} />
+            </div>
+            <a className="stars" id="threeStar">
+              {this.state.stars}
+            </a>
+            <a className="percent" id="threePercent">
+              {this.state.three.width}
+            </a>
+          </div>
+          <div className="indiv_rating_container">
+            <div className="bar" id="twoBar">
+              <span className="fill" id="twoFill" style={this.state.two} />
+            </div>
+            <a className="stars" id="twoStar">
+              {this.state.stars}
+            </a>
+            <a className="percent" id="twoPercent">
+              {this.state.two.width}
+            </a>
+          </div>
+          <div className="indiv_rating_container">
+            <div className="bar" id="oneBar">
+              <span className="fill" id="oneFill" style={this.state.one} />
+            </div>
+            <a className="stars" id="oneStar">
+              {this.state.stars}
+            </a>
+            <a className="percent" id="onePercent">
+              {this.state.one.width}
+            </a>
+          </div>
         </div>
       </div>
     );
