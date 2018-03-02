@@ -15,7 +15,7 @@ export class Feedback extends React.Component {
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleStarClick = this.handleStarsClick.bind(this);
+    this.handleStarsClick = this.handleStarsClick.bind(this);
   }
 
   handleChange(e) {
@@ -51,7 +51,7 @@ export class Feedback extends React.Component {
     console.log(e);
     var filteredStarsReviews = this.state.searchResults.filter(review => {
       var rating = Math.floor(review.rating);
-      return rating.match(e);
+      return rating === e;
     });
     this.setState({
       searchResults: filteredStarsReviews
