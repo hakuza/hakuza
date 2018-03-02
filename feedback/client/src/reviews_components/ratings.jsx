@@ -8,7 +8,7 @@ export class Ratings extends React.Component {
     super(props);
     this.state = {
       reviews: props.reviews,
-      stars: null,
+      // stars: null,
       avgRating: null,
       five: {
         width: null
@@ -29,10 +29,10 @@ export class Ratings extends React.Component {
   }
 
   componentWillMount() {
-    var stars = [];
-    for (var i = 0; i < 5; i++) {
-      stars.push(<FontAwesomeIcon icon={faStar} className="star" />);
-    }
+    // var stars = [];
+    // for (var i = 0; i < 5; i++) {
+    //   stars.push(<FontAwesomeIcon icon={faStar} className="star" />);
+    // }
     var totalSum = 0;
     var totalNumRatings = 0;
     var five = 0;
@@ -64,7 +64,6 @@ export class Ratings extends React.Component {
     var roundedAvgRating = Math.round(avgRating * 10) / 10;
     this.setState({
       avgRating: roundedAvgRating,
-      stars: stars,
       five: {
         width: `${Math.round(five / totalNumRatings * 100)}%`
       },
