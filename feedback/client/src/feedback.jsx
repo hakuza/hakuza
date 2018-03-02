@@ -49,7 +49,7 @@ export class Feedback extends React.Component {
   // clicking doesn't work right now, it is saying this.state is undefined. fix.
   handleStarsClick(e) {
     console.log(e);
-    var filteredStarsReviews = this.state.searchResults.filter(review => {
+    var filteredStarsReviews = this.state.courseReview.filter(review => {
       var rating = Math.floor(review.rating);
       return rating === e;
     });

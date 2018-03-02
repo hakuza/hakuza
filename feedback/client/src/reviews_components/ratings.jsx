@@ -117,7 +117,11 @@ export class Ratings extends React.Component {
               {this.state.five.width}
             </a>
           </div>
-          <div className="indiv_rating_container">
+          <div
+            className="indiv_rating_container"
+            id={4}
+            onClick={() => this.props.click(4)}
+          >
             <div className="bar" id="fourBar">
               <span className="fill" id="fourFill" style={this.state.four} />
             </div>
@@ -132,7 +136,11 @@ export class Ratings extends React.Component {
               {this.state.four.width}
             </a>
           </div>
-          <div className="indiv_rating_container">
+          <div
+            className="indiv_rating_container"
+            id={3}
+            onClick={() => this.props.click(3)}
+          >
             <div className="bar" id="threeBar">
               <span className="fill" id="threeFill" style={this.state.three} />
             </div>
@@ -147,7 +155,11 @@ export class Ratings extends React.Component {
               {this.state.three.width}
             </a>
           </div>
-          <div className="indiv_rating_container">
+          <div
+            className="indiv_rating_container"
+            id={2}
+            onClick={() => this.props.click(2)}
+          >
             <div className="bar" id="twoBar">
               <span className="fill" id="twoFill" style={this.state.two} />
             </div>
@@ -162,7 +174,11 @@ export class Ratings extends React.Component {
               {this.state.two.width}
             </a>
           </div>
-          <div className="indiv_rating_container">
+          <div
+            className="indiv_rating_container"
+            id={1}
+            onClick={() => this.props.click(1)}
+          >
             <div className="bar" id="oneBar">
               <span className="fill" id="oneFill" style={this.state.one} />
             </div>
