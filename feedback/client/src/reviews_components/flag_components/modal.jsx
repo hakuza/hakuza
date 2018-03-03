@@ -14,7 +14,23 @@ export function ModalDiv(props) {
         >
           Support team here
         </a>
+        <br />
+        <br />
+        Issue Type
       </p>
+      <div className="select-style">
+        <select>
+          <option value="select">--Select One--</option>
+          <option value="content">Inappropriate Course Content</option>
+          <option value="behavior">Inappropriate Behavior</option>
+          <option value="policy">Udemy Policy Violation</option>
+          <option value="spam">Spammy Content</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <br />
+      <textarea rows="12" cols="90" />
+      <br />
       <button onClick={props.close}>close</button>
     </div>
   );
