@@ -9,6 +9,7 @@ body {
 .row_items {
   padding-right: 10px;
 }
+
 #streamer {
   background: #29303b;
 }
@@ -29,4 +30,8 @@ body {
 #by_line {
   display: flex;
   justify-content: flex-start;
+}
+
+span {
+  padding-right: 5px;
 }
