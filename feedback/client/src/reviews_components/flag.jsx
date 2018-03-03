@@ -1,6 +1,8 @@
 import React from "react";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faThumbsDown } from "@fortawesome/fontawesome-free-solid";
+import Modal from "react-modal";
+import { ModalDiv } from "./flag_components/modal.jsx";
 
 export class Flag extends React.Component {
   constructor(props) {
@@ -8,9 +10,13 @@ export class Flag extends React.Component {
     this.state = {
       state: null,
       yesClicked: false,
-      noClicked: false
+      noClicked: false,
+      modalIsOpen: false,
+      test: true
     };
     this.handleClick = this.handleClick.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   handleClick(e) {
@@ -28,6 +34,18 @@ export class Flag extends React.Component {
     }
   }
 
+  openModal() {
+    this.setState({
+      modalIsOpen: true
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      modalIsOpen: false
+    });
+  }
+
   render() {
     return (
       <div className="flag_container">
@@ -38,7 +56,14 @@ export class Flag extends React.Component {
         <div className="no" onClick={() => this.handleClick("no")}>
           <FontAwesomeIcon icon={faThumbsDown} />
         </div>
-        <div className="report">Report</div>
+        <div className="report" onClick={this.openModal}>
+          Report
+        </div>
+        <Modal isOpen={this.state.modalIsOpen}>
+          <div>
+            <ModalDiv close={this.closeModal} />
+          </div>
+        </Modal>
         {this.state.yesClicked || this.state.noClicked ? (
           <div className="message">
             Thank you! You have successfully submitted feedback for this review.
