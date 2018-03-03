@@ -47,6 +47,16 @@ export class Flag extends React.Component {
   }
 
   render() {
+    const customStyles = {
+      content: {
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        bottom: "auto",
+        marginRight: "-50%",
+        transform: "translate(-50%, -50%)"
+      }
+    };
     return (
       <div className="flag_container">
         <div className="question">Was this review helpful?</div>
@@ -59,7 +69,13 @@ export class Flag extends React.Component {
         <div className="report" onClick={this.openModal}>
           Report
         </div>
-        <Modal isOpen={this.state.modalIsOpen}>
+        <Modal
+          ariaHideApp={false}
+          shouldCloseOnOverlayClick={true}
+          shouldCloseOnEsc={true}
+          isOpen={this.state.modalIsOpen}
+          style={customStyles}
+        >
           <div>
             <ModalDiv close={this.closeModal} />
           </div>
