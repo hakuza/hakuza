@@ -45,7 +45,7 @@ export class Flag extends React.Component {
   }
 
   render() {
-    const customStyles = {
+    const style = {
       content: {
         top: "50%",
         left: "50%",
@@ -53,6 +53,9 @@ export class Flag extends React.Component {
         bottom: "auto",
         marginRight: "-50%",
         transform: "translate(-50%, -50%)"
+      },
+      overlay: {
+        backgroundColor: "rgba(41,48,59,0.8)"
       }
     };
     return (
@@ -72,7 +75,7 @@ export class Flag extends React.Component {
           shouldCloseOnOverlayClick={true} // fix
           shouldCloseOnEsc={true} // fix
           isOpen={this.state.modalIsOpen}
-          style={customStyles}
+          style={style}
         >
           <div>
             <ModalDiv close={this.closeModal} />
