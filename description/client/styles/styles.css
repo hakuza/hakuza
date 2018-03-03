@@ -1,5 +1,6 @@
 body {
   color: #fff;
+  min-width: 768px;
 }
 
 .star {
