@@ -1,4 +1,6 @@
 import React from "react";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { faThumbsUp, faThumbsDown } from "@fortawesome/fontawesome-free-solid";
 
 export class Flag extends React.Component {
   constructor(props) {
@@ -31,10 +33,10 @@ export class Flag extends React.Component {
       <div className="flag_container">
         <div className="question">Was this review helpful?</div>
         <div className="yes" onClick={() => this.handleClick("yes")}>
-          Yes
+          <FontAwesomeIcon icon={faThumbsUp} />
         </div>
         <div className="no" onClick={() => this.handleClick("no")}>
-          No
+          <FontAwesomeIcon icon={faThumbsDown} />
         </div>
         <div className="report">Report</div>
         {this.state.yesClicked || this.state.noClicked ? (
