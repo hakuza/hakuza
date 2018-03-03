@@ -8,11 +8,9 @@ export class Flag extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      state: null,
       yesClicked: false,
       noClicked: false,
-      modalIsOpen: false,
-      test: true
+      modalIsOpen: false
     };
     this.handleClick = this.handleClick.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -70,9 +68,9 @@ export class Flag extends React.Component {
           Report
         </div>
         <Modal
-          ariaHideApp={false}
-          shouldCloseOnOverlayClick={true}
-          shouldCloseOnEsc={true}
+          ariaHideApp={false} //Hides appElement
+          shouldCloseOnOverlayClick={true} // fix
+          shouldCloseOnEsc={true} // fix
           isOpen={this.state.modalIsOpen}
           style={customStyles}
         >
