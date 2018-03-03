@@ -1,0 +1,26 @@
+.what_you_get_items {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.what_you_get {
+  background-color: #f9f9f9;
+  border: 1px solid #dedfe0;
+  padding: 10px 15px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+
+span {
+  padding-right: 10px;
+}
