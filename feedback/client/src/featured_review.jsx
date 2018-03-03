@@ -30,15 +30,10 @@ export class Featured extends React.Component {
     return (
       <div>
         <div className="title">Featured Review</div>
-        <div className="indivContainer">
+        <div className="featured_indivContainer">
           <Picture name={this.state.reviews.user.display_name} />
           <div className="user">
-            <div className="time">
-              {moment(this.state.reviews.created).fromNow()}
-            </div>
             {this.state.reviews.user.display_name}
-          </div>
-          <div className="indivReviews">
             <div className="indivRating">
               <StarRatings
                 rating={this.state.reviews.rating}
@@ -48,6 +43,11 @@ export class Featured extends React.Component {
                 starSpacing="1px"
               />
             </div>
+            <div className="time">
+              {moment(this.state.reviews.created).fromNow()}
+            </div>
+          </div>
+          <div className="indivReviews">
             {this.state.reviews.content}
             <Flag />
           </div>

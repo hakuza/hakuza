@@ -1,9 +1,22 @@
+:root {
+  --page_width: 900px;
+}
+
+.featured_indivContainer {
+  display: flex;
+  margin: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
+  width: var(--page_width);
+}
+
 .ratings_container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-  width: 1000px;
+  width: var(--page_width);
   border-style: solid;
   border-width: 1px;
   border-color: pink;
@@ -76,7 +89,7 @@
 .reviews_container {
   display: flex;
   flex-wrap: wrap;
-  width: 1000px;
+  width: var(--page_width);
   font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 16px;
   border-style: solid;
