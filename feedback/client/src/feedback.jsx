@@ -4,6 +4,7 @@ import { Search } from "./reviews_components/search.jsx";
 import { Ratings } from "./reviews_components/ratings.jsx";
 import { Flag } from "./reviews_components/flag.jsx";
 import StarRatings from "react-star-ratings";
+import moment from "moment";
 
 export class Feedback extends React.Component {
   constructor(props) {
@@ -81,7 +82,7 @@ export class Feedback extends React.Component {
                     <Picture name={elem.user.display_name} />
                     <div className="user" key={i + 1}>
                       <div className="time" key={i + 2}>
-                        {elem.created}
+                        {moment(elem.created).fromNow()}
                       </div>
                       {elem.user.display_name}
                     </div>

@@ -3,6 +3,7 @@ import { Picture } from "./reviews_components/picture.jsx";
 import { Ratings } from "./reviews_components/ratings.jsx";
 import { Flag } from "./reviews_components/flag.jsx";
 import StarRatings from "react-star-ratings";
+import moment from "moment";
 
 export class Featured extends React.Component {
   constructor(props) {
@@ -13,14 +14,16 @@ export class Featured extends React.Component {
   }
 
   componentWillMount() {
-    var fiveStarReviews = this.state.reviews.filter(review => {
-      return review.content.length > 80 && review.rating === 5;
-    });
-    console.log(fiveStarReviews.length);
-    var index = Math.floor(Math.random() * fiveStarReviews.length);
-    this.setState({
-      reviews: fiveStarReviews[index]
-    });
+    console.log(this.state.haveFeatReview);
+    if (!this.state.haveFeatReview) {
+      var fiveStarReviews = this.state.reviews.filter(review => {
+        return review.content.length > 80 && review.rating === 5;
+      });
+      var index = Math.floor(Math.random() * fiveStarReviews.length);
+      this.setState({
+        reviews: fiveStarReviews[index]
+      });
+    }
   }
 
   render() {
@@ -30,7 +33,9 @@ export class Featured extends React.Component {
         <div className="indivContainer">
           <Picture name={this.state.reviews.user.display_name} />
           <div className="user">
-            <div className="time">{this.state.reviews.created}</div>
+            <div className="time">
+              {moment(this.state.reviews.created).fromNow()}
+            </div>
             {this.state.reviews.user.display_name}
           </div>
           <div className="indivReviews">
