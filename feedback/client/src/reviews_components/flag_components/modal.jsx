@@ -8,7 +8,10 @@ export function ModalDiv(props) {
         Flagged content is reviewed by Udemy staff to determine whether it
         violates Terms of Service or Community Guidelines. If you have a
         question or technical issue, please contact our{" "}
-        <a href="https://support.udemy.com/hc/en-us?flash_digest=c746089a37590bdef80f6eabbbe529c74a14be49">
+        <a
+          target="blank" // opens a new tab when link is clicked
+          href="https://support.udemy.com/hc/en-us?flash_digest=c746089a37590bdef80f6eabbbe529c74a14be49"
+        >
           Support team here
         </a>
       </p>
