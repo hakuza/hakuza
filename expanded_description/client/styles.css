@@ -1,3 +1,7 @@
+body {
+  min-width: 768px;
+}
+
 .what_you_get_items {
   display: flex;
   align-items: flex-start;
