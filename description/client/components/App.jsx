@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import Feedback from './Feedback.jsx';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import {faComment, faClosedCaptioning} from '@fortawesome/fontawesome-free-solid';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,10 +18,7 @@ export default class App extends React.Component {
     axios
       .get('/description')
       .then(response => {
-        this.setState({
-          course: response.data,
-          currentCourse: response.data[16]
-        });
+        this.setState({course: response.data, currentCourse: response.data[16]});
       })
       .catch(err => console.log(err));
   }
@@ -30,14 +29,19 @@ export default class App extends React.Component {
         <div id="container">
           <h1 id="title">{this.state.currentCourse.title}</h1>
           <h2>{this.state.currentCourse.headline}</h2>
-          <Feedback currentCourse={this.state.currentCourse} />
-          <h4>Created by {this.state.currentCourse.name}</h4>
-          <h4>
-            Last Updated{' '}
-            {new Date(this.state.currentCourse.created).toDateString()}
-          </h4>
-          <h4>English</h4>
-          <h4>Closed captioning</h4>
+          <Feedback currentCourse={this.state.currentCourse}/>
+          <div id="by_line">
+            <h4 className="row_items">
+              Created by {this.state.currentCourse.name}
+            </h4>
+            <h4 className="row_items">
+              Last Updated{' '} {new Date(this.state.currentCourse.created).toDateString()}
+            </h4>
+            <h4 className="row_items">
+              <span><FontAwesomeIcon icon={faComment}/></span>English</h4>
+            <h4 className="row_items">
+              <span><FontAwesomeIcon icon={faClosedCaptioning}/></span>English</h4>
+          </div>
         </div>
       </div>
     );
