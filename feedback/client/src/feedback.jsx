@@ -93,7 +93,7 @@ export class Feedback extends React.Component {
                           starSpacing="1px"
                         />
                       </div>
-                      {elem.content}
+                      <p>{elem.content}</p>
                       <Flag />
                     </div>
                   </div>

@@ -12,7 +12,6 @@ export function Search(props) {
       ) : (
         <div className="subTitle">Reviews</div>
       )}
-
       <input
         type="search"
         id="searchField"
