@@ -76,7 +76,9 @@ export class Feedback extends React.Component {
               if (elem.content) {
                 return (
                   <div className="indivContainer" key={i}>
-                    <Picture name={elem.user.display_name} />
+                    <div className="userPicture">
+                      <Picture name={elem.user.display_name} />
+                    </div>
                     <div className="user" key={i + 1}>
                       <div className="time" key={i + 2}>
                         {moment(elem.created).fromNow()}

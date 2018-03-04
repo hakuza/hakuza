@@ -31,7 +31,9 @@ export class Featured extends React.Component {
       <div>
         <div className="title">Featured Review</div>
         <div className="featured_indivContainer">
-          <Picture name={this.state.reviews.user.display_name} />
+          <div className="userPicture">
+            <Picture name={this.state.reviews.user.display_name} />
+          </div>
           <div className="featured_user_container">
             <div className="featured_user">
               {this.state.reviews.user.display_name}

@@ -14,5 +14,9 @@ export function Picture(props) {
     initial = first + last;
   }
 
-  return <div className="userPicture">{initial}</div>;
+  return (
+    <div className="initial">
+      <span className="user_initial">{initial}</span>
+    </div>
+  );
 }
