@@ -2,7 +2,6 @@ import React from 'react';
 import Img from 'react-image'
 
 var Preview = function (props) { 
-	var counter = 0
 	if (!props.thumbnail) {
 	  return (
      <div>Loading...</div>
@@ -11,7 +10,8 @@ var Preview = function (props) {
 		console.log(props.thumbnail.courseToPurchase)
 	  return (
 	    <div className="preview-window"> 
-	      <img src={props.thumbnail.courseToPurchase.image_75x75}/>
+	      <span className="preview-intro"></span>
+	      <img src={props.thumbnail.courseToPurchase.image_240x135} className="preview-image"/>
 	    </div>
 	  )
   }

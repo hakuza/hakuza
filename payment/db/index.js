@@ -16,7 +16,7 @@ const udemySchema = new Schema({
   num_subscribers: Number,
   num_quizzes: Number,
   num_lectures: Number,
-  image_75x75: String
+  image_240x135: String
 })
 //create model
 const Courses = mongoose.model("Courses", udemySchema);

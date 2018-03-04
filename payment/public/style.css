@@ -1,4 +1,213 @@
-.preview-window img {
+.payment-main {
+  display: grid;
+  grid-template-columns: [first] 100% [end];
+  grid-template-rows: [row1-start] 20% [row1-end] 20% [third-line] 15% [fourth-line] 40% [fifth-line] 10% [last-line];
+  background-color: #fff;
+  height:100vh;
+  width:20vw;
+  position: relative;
+  box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+  border-radius: 4px;
+  color: #505763;
+  padding: 3px;
+}
+
+.preview-image {
+  grid-row:row1-end / 3;
+  width: 100%;
+  height: auto;
+  position:relative;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+.price {
+	grid-row-start: row1-end;
+  grid-row-end: third-line;
+  display: flex;
+  font-family:'Open Sans', sans-serif;;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 18px;
+  color:red;
+  margin-top: 5px;
+  position:relative;
+}
+
+.price .sale-price {
+  color: #505763;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  margin-right: 10px;
+  position:relative;
+}
+
+.price .original-price {
+    color: #a1a7b3;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 40px;
+    margin-right: 10px;
+}
+
+.buy-main .buy-now-button {
+	grid-row-start: third-line;
+  grid-row-end: fourth-line;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+/*  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;*/
+  color: #fff;
+  background-color: #ec5252;
+  margin: 10px;
+  width: auto;
+  border: 1px solid transparent;
+  padding: 16px 12px;
+  font-size: 15px;
+  line-height: 1.35135;
+  border-radius: 2px;
+
+}
+.buy-modal {
+	position:absolute;
+	top: 30%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+	height: 30%;
+	width: 30%;
+	border: 1px solid #ccc;
+	background: #fff;
+	overflow: auto;
+	overflow-scrolling: touch;
+	border-radius: 4px;
+	outline: none;
+	padding: 20px;
+	opacity: 1!important;
+}
+
+.overlay {
+    position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.cart-main .cart-button {
+	grid-row-start: third-line;
+  grid-row-end: fourth-line;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  margin: 10px;
+  width: 100%;
+  white-space: nowrap;
+/*  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;*/
+  color: black;
+  border-color: black;
+  padding: 16px 12px;
+  font-size: 15px;
+  line-height: 1.35135;
+  border-radius: 2px;
+
+}
+/*.introduction-asset .introduction-asset__placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(rgba(41,48,59,0),rgba(41,48,59,0),#29303b);
+    color: #fff;
+    font-weight: 700;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #ec5252;
+    border: 1px solid transparent;
+}*/
+
+/*.preview-window img {
   height:200px;
   width:150px;
 }
+
+*/
+/*.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+*/
+/*.play-button-trigger .play-button {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(/staticx/udemy/js/webpack/icon-play.ac3f32e….svg) no-repeat;
+    background-size: auto 50%;
+    background-position: 50%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .15s ease-in-out;
+    -moz-transition: opacity .15s ease-in-out;
+    -ms-transition: opacity .15s ease-in-out;
+    -o-transition: opacity .15s ease-in-out;
+    transition: opacity .15s ease-in-out;
+    -webkit-transition: -webkit-transform .15s ease-in-out;
+    -moz-transition: -moz-transform .15s ease-in-out;
+    -o-transition: -o-transform .15s ease-in-out;
+    transition: transform .15s ease-in-out;
+}*/
+
+
+
+
+
+/*
+fonts:
+font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;*/
+
+
+
+
+
