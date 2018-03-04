@@ -18,7 +18,7 @@ html {
   border-style: var(--test_style);
   border-width: 1px;
   border-color: black;
-  width: 800px;
+  width: 680px;
 }
 
 .featured_user_container {
@@ -42,9 +42,7 @@ html {
   border-style: var(--test_style);
   border-width: 1px;
   border-color: black;
-  padding: 1px;
-  margin: 10px;
-  width: 600px;
+  width: 680px;
 }
 
 .ratings_container {
@@ -195,7 +193,7 @@ html {
   background-color: white;
   width: 48px;
   height: 48px;
-  margin: 10px;
+  margin-right: 15px;
   /* padding: 10px; */
   border-radius: 50%;
   border-style: solid;
@@ -224,7 +222,6 @@ html {
   border-width: 1px;
   border-color: black;
   padding: 1px;
-  margin: 10px;
   width: 500px;
 }
 
@@ -241,8 +238,8 @@ p {
 
 .user {
   justify-content: flex-start;
-  width: 125px;
-  margin: 10px;
+  width: 190px;
+  margin-right: 15px;
 }
 
 .flag_container {
