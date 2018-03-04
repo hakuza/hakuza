@@ -29,17 +29,14 @@ export class Feedback extends React.Component {
   handleSearch(e) {
     if (e.key === "Enter" || e.type === "click") {
       this.setState({
-        header: e.target.value || this.state.input
+        header: this.state.input
       });
       var filteredReviews = this.state.courseReview.filter(review => {
         if (review.content) {
           var input = this.state.input;
-          var target = e.target.value.toLowerCase();
           var content = review.content.toLowerCase();
           var author = review.user.display_name.toLowerCase();
-          return (
-            content.match(target || input) || author.match(target || input)
-          );
+          return content.match(input) || author.match(input);
         }
       });
       this.setState({

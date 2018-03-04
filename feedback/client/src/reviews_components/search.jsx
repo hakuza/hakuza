@@ -18,11 +18,7 @@ export function Search(props) {
         onChange={props.change}
         onKeyUp={props.search}
       />
-      <input //have to make this work somehow
-        type="submit"
-        className="searchButton"
-        onClick={props.search}
-      />
+      <div className="searchButton" onClick={props.search} />
     </div>
   );
 }
