@@ -1,4 +1,6 @@
 import React from "react";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/fontawesome-free-solid";
 
 export function Search(props) {
   return (
@@ -18,7 +20,9 @@ export function Search(props) {
         onChange={props.change}
         onKeyUp={props.search}
       />
-      <div className="searchButton" onClick={props.search} />
+      <div className="searchButton" onClick={props.search}>
+        <FontAwesomeIcon icon={faSearch} />
+      </div>
     </div>
   );
 }

@@ -149,8 +149,6 @@
 }
 
 .subTitle {
-  justify-content: space-between;
-  flex-direction: row;
   font-family: var(--font);
   font-size: 20px;
   font-weight: 400;
@@ -159,22 +157,18 @@
 }
 
 #searchField {
-  justify-content: space-between;
-  flex-direction: row;
   margin: 20px 0px 20px 20px;
   width: 200px;
   height: 20px;
 }
 
 .searchButton {
-  justify-content: space-between;
-  flex-direction: row;
-  margin: 20px 0px 20px 0px;
-  width: 60px;
+  color: #fff;
+  background-color: #007791;
+  padding: 6px 10px;
+  margin: 10px 0px 10px 0px;
+  width: 14px;
   height: 20px;
-  border-style: var(--test_style);
-  border-width: 1px;
-  border-color: grey;
 }
 
 .indivContainer {

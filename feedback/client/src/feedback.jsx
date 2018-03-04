@@ -22,14 +22,14 @@ export class Feedback extends React.Component {
 
   handleChange(e) {
     this.setState({
-      input: e.target.value.toLowerCase()
+      input: e.target.value.toLowerCase() // store the user input as they type
     });
   }
 
   handleSearch(e) {
     if (e.key === "Enter" || e.type === "click") {
       this.setState({
-        header: this.state.input
+        header: this.state.input // use this state to display the text next to search
       });
       var filteredReviews = this.state.courseReview.filter(review => {
         if (review.content) {
