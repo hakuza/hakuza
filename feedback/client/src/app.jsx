@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import { Reviews } from "./reviews.jsx";
+import { Feedback } from "./feedback.jsx";
+import { Featured } from "./featured_review.jsx";
 
 export class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     axios
       .get("/feedback")
       .then(res => {
@@ -23,7 +24,7 @@ export class App extends React.Component {
         console.log(data);
         this.setState({
           reviews: data,
-          id: res.data[0].courseId
+          id: res.data[1].courseId
         });
       })
       .catch(err => {
@@ -37,12 +38,8 @@ export class App extends React.Component {
     }
     return (
       <div>
-        <h2>Featured Review</h2>
-        <h2>Student Feedback</h2>
-        <h3>Reviews</h3>
-        <div className="reviewsContainer">
-          <Reviews reviews={this.state.reviews} id={this.state.id} />
-        </div>
+        <Featured reviews={this.state.reviews} id={this.state.id} />
+        <Feedback reviews={this.state.reviews} id={this.state.id} />
       </div>
     );
   }
