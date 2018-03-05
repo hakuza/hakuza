@@ -1,9 +1,8 @@
 import React from 'react';
 import Course from './course.jsx';
-import {Collapse} from 'react-collapse';
+import { Collapse } from 'react-collapse';
 
 export default class CourseList extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -11,8 +10,8 @@ export default class CourseList extends React.Component {
       expanded: false,
       'view-more-styles': {
         top: 515,
-      }
-    }
+      },
+    };
     this.accordian = this.accordian.bind(this);
   }
 
@@ -27,18 +26,25 @@ export default class CourseList extends React.Component {
       },
     });
   }
-  
+
   render() {
     return (
       <div>
         <Collapse isOpened={true} fixedHeight={this.state.height}>
           <div className="course-list">
             {this.props.courses.map(course => (
-              <Course key={course.id} course={course} onclick={this.props.onclick} />
+              <Course
+                key={course.id}
+                course={course}
+                onclick={this.props.onclick}
+              />
             ))}
           </div>
-          <div className="view-more-container" style={this.state['view-more-styles']}>
-            <button className="view-more-btn"onClick={this.accordian}>
+          <div
+            className="view-more-container"
+            style={this.state['view-more-styles']}
+          >
+            <button className="view-more-btn" onClick={this.accordian}>
               {this.state.expanded ? '- View Less' : '+ View More'}
             </button>
           </div>
