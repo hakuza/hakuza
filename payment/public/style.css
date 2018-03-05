@@ -1,9 +1,11 @@
 .payment-main {
-  display: grid;
+  /*display: grid;
   grid-template-columns: [first] 100% [end];
-  grid-template-rows: [row1-start] 20% [row1-end] 20% [third-line] 15% [fourth-line] 40% [fifth-line] 10% [last-line];
+  grid-template-rows: [row1-start] 20% [row1-end] 20% [third-line] 20% [fourth-line] 30% [fifth-line] 10% [last-line];*/
+  display:flex;
+  flex-direction: column;
   background-color: #fff;
-  height:100vh;
+  /*height:100vh;*/
   width:20vw;
   position: relative;
   box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
@@ -13,7 +15,6 @@
 }
 
 .preview-image {
-  grid-row:row1-end / 3;
   width: 100%;
   height: auto;
   position:relative;
@@ -23,15 +24,16 @@
 }
 
 .price {
-	grid-row-start: row1-end;
-  grid-row-end: third-line;
-  display: flex;
+	/*grid-row: row1-end / 3;*/
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
   font-family:'Open Sans', sans-serif;;
-  align-items: center;
   flex-wrap: wrap;
   font-size: 18px;
-  color:red;
   margin-top: 5px;
+  margin-left:10px;
+  margin-right:10px;
   position:relative;
 }
 
@@ -52,9 +54,22 @@
     margin-right: 10px;
 }
 
-.buy-main .buy-now-button {
-	grid-row-start: third-line;
-  grid-row-end: fourth-line;
+.sale-time-left {
+  color: #208058;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-left:10px; 
+  margin-right:10px;
+}
+
+.purchase-main {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:40px;
+
+}
+.buy-now-button {
   display: inline-block;
   margin-bottom: 0;
   font-weight: 600;
@@ -71,14 +86,18 @@
   user-select: none;*/
   color: #fff;
   background-color: #ec5252;
-  margin: 10px;
-  width: auto;
+  width: 90%;
+  margin:10px;
   border: 1px solid transparent;
   padding: 16px 12px;
   font-size: 15px;
   line-height: 1.35135;
   border-radius: 2px;
 
+}
+
+.buy-now-button:hover {
+  background-color: rgba(206,131,132,100);
 }
 .buy-modal {
 	position:absolute;
@@ -99,7 +118,7 @@
 }
 
 .overlay {
-    position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -109,8 +128,6 @@
 }
 
 .cart-main .cart-button {
-	grid-row-start: third-line;
-  grid-row-end: fourth-line;
   display: inline-block;
   margin-bottom: 0;
   font-weight: 600;
@@ -120,20 +137,110 @@
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
-  margin: 10px;
-  width: 100%;
   white-space: nowrap;
 /*  -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;*/
-  color: black;
+  color:  #686f7a;
   border-color: black;
+  width: 90%;
+  margin-top:5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 16px 12px;
   font-size: 15px;
   line-height: 1.35135;
   border-radius: 2px;
 
+}
+
+.cart-button:hover {
+  background-color: rgba(240,240,240,100);
+}
+
+.money-back-gary {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  color: #505763;
+  font-family:'Open Sans', sans-serif;
+}
+
+.info-details {
+	display: flex;
+	flex-direction: column;
+  font-size: 12px;
+  font-weight: 400;
+  margin:10px;
+  color: #505763;
+  font-family:'Open Sans', sans-serif;
+
+
+}
+.icons {
+  flex: 0 0 auto;
+  min-width: 1px;
+  margin-right: 6px;
+  padding-top: 3px;
+  width: 15px;
+  vertical-align: -8%;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  color: #505763;
+}
+
+strong {
+  font-weight: 700;
+  box-sizing: border-box;
+  font-family:'Open Sans',sans-serif;
+  font-size: 15px;
+  line-height: 1.43;
+  color: #505763;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+.coupon {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.coupon:hover {
+  font-color:black;
+}
+
+.coupon-button {
+    padding: 6px 10px;
+    font-size: 15px;
+    line-height: 1.35135;
+    border-radius: 2px;
+    display: block;
+    width:auto;
+    border-color: transparent;
+    background-color: transparent;
+    color: #007791;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    font-family:'Open Sans',sans-serif;
+    -webkit-appearance: button;
 }
 /*.introduction-asset .introduction-asset__placeholder {
     display: flex;
