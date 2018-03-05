@@ -18,8 +18,14 @@ function Course({ course, onclick }) {
             </div>
           </div>
           <div className="details">
-            <div className="rating">{course.avg_rating}</div>
-            <div className="num-subs">{course.num_subs}</div>
+            <div className="rating">
+              <i className="fas fa-star" />
+              {course.avg_rating}
+            </div>
+            <div className="num-subs">
+              <i className="far fa-user" />
+              {course.num_subs}
+            </div>
             <div className="price">{course.price}</div>
           </div>
         </div>
