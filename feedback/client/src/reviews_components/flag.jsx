@@ -2,7 +2,7 @@ import React from "react";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faThumbsDown } from "@fortawesome/fontawesome-free-solid";
 import Modal from "react-modal";
-import { ModalDiv } from "./flag_components/modal.jsx";
+import { ModalDiv } from "./flag_components/modalDiv.jsx";
 
 export class Flag extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ export class Flag extends React.Component {
     this.state = {
       yesClicked: false,
       noClicked: false,
-      modalIsOpen: false
+      modalIsOpen: false,
     };
     this.handleClick = this.handleClick.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -22,25 +22,25 @@ export class Flag extends React.Component {
     console.log(this.state.yesClicked);
     if (e === "yes") {
       this.setState({
-        yesClicked: !this.state.yesClicked
+        yesClicked: !this.state.yesClicked,
       });
     }
     if (e === "no") {
       this.setState({
-        noClicked: !this.state.noClicked
+        noClicked: !this.state.noClicked,
       });
     }
   }
 
   openModal() {
     this.setState({
-      modalIsOpen: true
+      modalIsOpen: true,
     });
   }
 
   closeModal() {
     this.setState({
-      modalIsOpen: false
+      modalIsOpen: false,
     });
   }
 
@@ -52,11 +52,11 @@ export class Flag extends React.Component {
         right: "auto",
         bottom: "auto",
         marginRight: "-50%",
-        transform: "translate(-50%, -50%)"
+        transform: "translate(-50%, -50%)",
       },
       overlay: {
-        backgroundColor: "rgba(41,48,59,0.8)"
-      }
+        backgroundColor: "rgba(41,48,59,0.8)",
+      },
     };
     return (
       <div className="flag_container">

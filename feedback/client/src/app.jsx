@@ -9,7 +9,7 @@ export class App extends React.Component {
     super(props);
     this.state = {
       reviews: null,
-      id: 1383496
+      id: 1383496,
     };
   }
 
@@ -24,7 +24,7 @@ export class App extends React.Component {
         console.log(data);
         this.setState({
           reviews: data,
-          id: res.data[1].courseId
+          id: res.data[10].courseId,
         });
       })
       .catch(err => {

@@ -8,77 +8,58 @@ export class Ratings extends React.Component {
     super(props);
     this.state = {
       reviews: props.reviews,
-      // stars: null,
       avgRating: null,
       five: {
-        width: null
+        width: null,
       },
       four: {
-        width: null
+        width: null,
       },
       three: {
-        width: null
+        width: null,
       },
       two: {
-        width: null
+        width: null,
       },
       one: {
-        width: null
-      }
+        width: null,
+      },
     };
   }
-
   componentWillMount() {
-    // var stars = [];
-    // for (var i = 0; i < 5; i++) {
-    //   stars.push(<FontAwesomeIcon icon={faStar} className="star" />);
-    // }
-    var totalSum = 0;
-    var totalNumRatings = 0;
-    var five = 0;
-    var four = 0;
-    var three = 0;
-    var two = 0;
-    var one = 0;
-    this.state.reviews.map(elem => {
-      var rating = elem.rating;
-      if (Math.floor(rating) === 5) {
-        five += 1;
-      }
-      if (Math.floor(rating) === 4) {
-        four += 1;
-      }
-      if (Math.floor(rating) === 3) {
-        three += 1;
-      }
-      if (Math.floor(rating) === 2) {
-        two += 1;
-      }
-      if (Math.floor(rating) === 1) {
-        one += 1;
+    let totalSum = 0;
+    let totalNumRatings = 0;
+    let bars = [0, 0, 0, 0, 0, 0];
+    this.state.reviews.forEach(elem => {
+      let rating = elem.rating;
+      if (Math.floor(rating) === 0) {
+        bars[1]++;
+      } else {
+        bars[Math.floor(rating)]++;
       }
       totalSum += rating;
       totalNumRatings += 1;
     });
-    var avgRating = totalSum / this.state.reviews.length;
-    var roundedAvgRating = Math.round(avgRating * 10) / 10;
+    let avgRating = totalSum / this.state.reviews.length;
+    let roundedAvgRating = Math.round(avgRating * 10) / 10;
+    console.log(bars);
     this.setState({
       avgRating: roundedAvgRating,
       five: {
-        width: `${Math.round(five / totalNumRatings * 100)}%`
+        width: `${Math.round(bars[5] / totalNumRatings * 100)}%`,
       },
       four: {
-        width: `${Math.round(four / totalNumRatings * 100)}%`
+        width: `${Math.round(bars[4] / totalNumRatings * 100)}%`,
       },
       three: {
-        width: `${Math.round(three / totalNumRatings * 100)}%`
+        width: `${Math.round(bars[3] / totalNumRatings * 100)}%`,
       },
       two: {
-        width: `${Math.round(two / totalNumRatings * 100)}%`
+        width: `${Math.round(bars[2] / totalNumRatings * 100)}%`,
       },
       one: {
-        width: `${Math.round(one / totalNumRatings * 100)}%`
-      }
+        width: `${Math.round(bars[1] / totalNumRatings * 100)}%`,
+      },
     });
   }
 

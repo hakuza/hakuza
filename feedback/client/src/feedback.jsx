@@ -5,6 +5,11 @@ import { Ratings } from "./reviews_components/ratings.jsx";
 import { Flag } from "./reviews_components/flag.jsx";
 import StarRatings from "react-star-ratings";
 import moment from "moment";
+import ReactHtmlParser, {
+  processNodes,
+  convertNodeToElement,
+  htmlparser2,
+} from "react-html-parser";
 
 export class Feedback extends React.Component {
   constructor(props) {
@@ -13,7 +18,7 @@ export class Feedback extends React.Component {
       courseReview: props.reviews[props.id],
       searchResults: props.reviews[props.id],
       input: "",
-      header: ""
+      header: "",
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -22,38 +27,42 @@ export class Feedback extends React.Component {
 
   handleChange(e) {
     this.setState({
-      input: e.target.value.toLowerCase() // store the user input as they type
+      input: e.target.value.toLowerCase(), // store the user input as they type
     });
   }
 
   handleSearch(e) {
     if (e.key === "Enter" || e.type === "click") {
       this.setState({
-        header: this.state.input // use this state to display the text next to search
+        header: this.state.input, // use this state to display the text next to search
       });
-      var filteredReviews = this.state.courseReview.filter(review => {
+      let filteredReviews = this.state.courseReview.filter(review => {
         if (review.content) {
-          var input = this.state.input;
-          var content = review.content.toLowerCase();
-          var author = review.user.display_name.toLowerCase();
+          let input = this.state.input;
+          let content = review.content.toLowerCase();
+          let author = review.user.display_name.toLowerCase();
           return content.match(input) || author.match(input);
         }
       });
+      let bolded = filteredReviews.map(review => Object.assign({}, review));
+      bolded.forEach(review => {
+        let input = this.state.input;
+        review.content = review.content.replace(input, `<span>${input}</span>`);
+      });
       this.setState({
-        searchResults: filteredReviews
+        searchResults: bolded,
       });
     }
   }
 
-  // clicking doesn't work right now, it is saying this.state is undefined. fix.
   handleStarsClick(e) {
     console.log(e);
-    var filteredStarsReviews = this.state.courseReview.filter(review => {
-      var rating = Math.floor(review.rating);
+    let filteredStarsReviews = this.state.courseReview.filter(review => {
+      let rating = Math.floor(review.rating);
       return rating === e;
     });
     this.setState({
-      searchResults: filteredStarsReviews
+      searchResults: filteredStarsReviews,
     });
   }
 
@@ -95,7 +104,9 @@ export class Feedback extends React.Component {
                           starSpacing="1px"
                         />
                       </div>
-                      <p>{elem.content}</p>
+                      <p className="review-content">
+                        {ReactHtmlParser(elem.content)}
+                      </p>
                       <Flag />
                     </div>
                   </div>
