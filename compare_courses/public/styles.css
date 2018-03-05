@@ -10,6 +10,27 @@
   margin: 0 0 15px;
 }
 
+.view-more-container {
+  padding-top: 30px;
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(hsla(0,0%,100%,0),hsla(0,0%,100%,.95),#fff);
+}
+
+.view-more-btn {
+  color: #007791;
+  text-decoration: none;
+  background-color: transparent;
+  border-color: transparent;
+  outline: none;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.view-more-btn:hover {
+  color: #003845;
+}
+
 .course-list > div:last-child {
   margin-bottom: 10px;
 }
