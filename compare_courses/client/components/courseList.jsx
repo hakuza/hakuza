@@ -38,10 +38,7 @@ export default class CourseList extends React.Component {
             ))}
           </div>
           <div className="view-more-container" style={this.state['view-more-styles']}>
-            <button 
-              className="view-more-btn"
-              onClick={this.accordian}
-            >
+            <button className="view-more-btn"onClick={this.accordian}>
               {this.state.expanded ? '- View Less' : '+ View More'}
             </button>
           </div>
