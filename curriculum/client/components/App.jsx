@@ -1,12 +1,15 @@
 import React from 'react';
 import axios from 'axios';
-import ChapterList from './ChapterList';
+import ChapterList from './ChapterList.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
 
   }
+
+  // onClick(e) {   e.preventDefault();   $('.expand-one').click(() => {
+  // console.log('clicked');     $('.content-one').slideToggle('slow');   }); }
 
   render() {
     return (
