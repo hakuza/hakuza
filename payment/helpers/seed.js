@@ -16,7 +16,7 @@ const seed = async function () {
         num_subscribers: course.num_subscribers,
         num_quizzes: course.num_quizzes,
         num_lectures: course.num_lectures,
-        image_75x75: course.image_75x75
+        image_240x135: course.image_240x135
       });
     try { 
       await courseDoc.save();	
