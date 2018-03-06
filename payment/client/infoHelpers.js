@@ -5,9 +5,9 @@ const calculateRandomPrice = function (price) {
 	const givenPrice = Number(price.slice(1));
   // const saleFactor = Math.round(Math.floor((Math.random() * 10) + 1));
   const saleFactor = Math.floor(((Math.random() * 5) + 1).toFixed(2));
-  const finalPrice = givenPrice * saleFactor
+  const finalPrice = Math.round((givenPrice * saleFactor) * 100)/100
   caché[0] = finalPrice;
-  caché[1] = Math.floor(((finalPrice - givenPrice) / finalPrice) * 100) 
+  caché[1] = Math.round(((finalPrice - givenPrice) / finalPrice) * 100) 
   return caché
 }
 

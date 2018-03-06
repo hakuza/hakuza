@@ -46,25 +46,24 @@ class Buy extends React.Component {
         >
          <div className="forms">
             <div className="modal-header">
-		          <h2 ref={subtitle => this.subtitle = subtitle}>Sign up and start Learning!</h2>
 		          <button className="close-modal" onClick={this.closeModal}>x</button>
+		          <h2 ref={subtitle => this.subtitle = subtitle}>Sign up and start Learning!</h2>
 		        </div>
 	          <form className="modal-form"> 
-	            <FontAwesomeIcon className="icons" icon={faEnvelope} /> 
-					    <input type="text" placeholder={<FontAwesomeIcon className="icons" icon={faEnvelope}/>} className="info-input"></input>
+					    <input type="text" placeholder="Full Name" className="info-input name"></input>
 				    </form> 
 				    <form className="modal-form">  
-					    <input type="text" placeholder="Enter Coupon" className="info-input"></input>
+					    <input type="text" placeholder="E-mail" className="info-input mail"></input>
 				    </form> 
 				    <form className="modal-form">  
-					    <input type="text" placeholder="Enter Coupon" className="info-input"></input>
+					    <input type="text" placeholder="Password" className="info-input pass"></input>
 				    </form> 
-	          <div>
-	          <input type="checkbox"></input>
+	          <div className="listserve">
+	          <input type="checkbox" className="modal-checkbox"></input>
 	          <span>You're in for exciting deals and personalized recommendations</span>
 	          </div>
-	           <button onClick={this.closeModal}>Sign Up</button>
-	           <div>By signing up, you agree to our Terms of Use and Privacy Policy.</div>
+	           <button className="modal-submit" onClick={this.closeModal}>Sign Up</button>
+	           <div className="privacy">By signing up, you agree to our Terms of Use and Privacy Policy.</div>
 	           <div className="modal-footer">Already have an account? Log In</div>
           </div>
         </Modal>
