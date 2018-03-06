@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.css'
-import ReactBootstrap from 'react'
+import './style.css';
 import Axios from 'axios';
 import Preview from './components/preview.jsx';
 import InfoBody from './components/infoBody.jsx';
-import {getYoutubeVideos} from './infoHelpers.js'
+import {getYoutubeVideos} from './infoHelpers.js';
 
 
 class Payment extends React.Component { 
