@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './style.css'
 import ReactBootstrap from 'react'
 import Axios from 'axios';
 import Preview from './components/preview.jsx';
