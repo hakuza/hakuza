@@ -27,7 +27,7 @@ export class Feedback extends React.Component {
 
   handleChange(e) {
     this.setState({
-      input: e.target.value.toLowerCase(), // store the user input as they type
+      input: e.target.value, // store the user input as they type
     });
   }
 
@@ -38,16 +38,19 @@ export class Feedback extends React.Component {
       });
       let filteredReviews = this.state.courseReview.filter(review => {
         if (review.content) {
-          let input = this.state.input;
+          let input = this.state.input.toLowerCase();
           let content = review.content.toLowerCase();
           let author = review.user.display_name.toLowerCase();
           return content.match(input) || author.match(input);
         }
       });
       let bolded = filteredReviews.map(review => Object.assign({}, review));
+      console.log(this.state.input);
       bolded.forEach(review => {
         let input = this.state.input;
-        review.content = review.content.replace(input, `<span>${input}</span>`);
+        let re = new RegExp(input, "ig");
+        console.log(re);
+        review.content = review.content.replace(re, "<span>$&</span>");
       });
       this.setState({
         searchResults: bolded,
