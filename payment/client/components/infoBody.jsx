@@ -11,7 +11,6 @@ import {calculateRandomPrice} from '../infoHelpers.js'
 class InfoBody extends React.Component {
   constructor (props) {
     super(props);
-    console.log(this.props.course)
   }
 
   render () {
@@ -22,14 +21,14 @@ class InfoBody extends React.Component {
         <div className="info-body-main"> 
           <div className="price">
             <span className="sale-price">{this.props.course.courseToPurchase.price}</span>
-            <span className="original-price">{calculateRandomPrice(this.props.course.courseToPurchase.price)}</span>
-            <span className="percent-sale">{this.props.course.courseToPurchase.price / Number(calculateRandomPrice(this.props.course.courseToPurchase.price).slice(1))}</span>
+            <span className="original-price">{'$' + calculateRandomPrice(this.props.course.courseToPurchase.price)[0]}</span>
+            <span className="percent-sale">{calculateRandomPrice(this.props.course.courseToPurchase.price)[1] + '% off'}</span>
           </div>
           <div className="sale-time-left">
             <FontAwesomeIcon icon={faStopwatch} />
-            <span>{(Math.floor(Math.random() * 4 + 1)) + ' days left at this price'}</span>
+            <span>{' '}{(Math.floor(Math.random() * 4 + 1)) + ' days left at this price'}</span>
           </div>
-          <div classNAme="purchase-main">
+          <div className="purchase-main">
             <Buy />
             <Cart />
             <div className="money-back-gary">30-Day Money-Back Guarantee</div>
@@ -57,7 +56,7 @@ class InfoBody extends React.Component {
               <span>{'Certificate Of Completion'}</span>
             </div>
           </div>
-          <div className="coupon">
+          <div>
             <Coupon />
           </div>
         </div>

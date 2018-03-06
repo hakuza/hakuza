@@ -1,21 +1,14 @@
 import $ from 'jquery';
 
 const calculateRandomPrice = function (price) {
-  let called = false;
-  let caché = {}
-  if (!called) { 
+  let caché = [];
 	const givenPrice = Number(price.slice(1));
   // const saleFactor = Math.round(Math.floor((Math.random() * 10) + 1));
   const saleFactor = Math.floor(((Math.random() * 5) + 1).toFixed(2));
   const finalPrice = givenPrice * saleFactor
-  caché.finalPrice = finalPrice
-  called = true;
-  console.log('first!')
-  return '$' + (finalPrice);
-  } else if (called === true) {
-    console.log('second')
-    return scaché.finalPrice
-  }
+  caché[0] = finalPrice;
+  caché[1] = Math.floor(((finalPrice - givenPrice) / finalPrice) * 100) 
+  return caché
 }
 
 const getYoutubeVideos = (query,callback) => {
