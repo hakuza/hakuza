@@ -1,6 +1,6 @@
 import React from "react";
 
-export function ModalDiv(props) {
+export function ModalDiv({ close }) {
   return (
     <div>
       <div className="subTitle">Report Abuse</div>
@@ -31,7 +31,7 @@ export function ModalDiv(props) {
       <br />
       <textarea rows="12" cols="90" />
       <br />
-      <button onClick={props.close}>close</button>
+      <button onClick={close}>close</button>
     </div>
   );
 }

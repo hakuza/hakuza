@@ -9,7 +9,7 @@ export class Featured extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: props.reviews[props.id]
+      reviews: props.reviews[props.id],
     };
   }
 
@@ -21,7 +21,7 @@ export class Featured extends React.Component {
       });
       var index = Math.floor(Math.random() * fiveStarReviews.length);
       this.setState({
-        reviews: fiveStarReviews[index]
+        reviews: fiveStarReviews[index],
       });
     }
   }
