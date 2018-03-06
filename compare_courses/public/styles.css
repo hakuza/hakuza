@@ -10,6 +10,31 @@
   margin: 0 0 15px;
 }
 
+.view-more-container {
+  padding-top: 30px;
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(
+    hsla(0, 0%, 100%, 0),
+    hsla(0, 0%, 100%, 0.95),
+    #fff
+  );
+}
+
+.view-more-btn {
+  color: #007791;
+  text-decoration: none;
+  background-color: transparent;
+  border-color: transparent;
+  outline: none;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.view-more-btn:hover {
+  color: #003845;
+}
+
 .course-list > div:last-child {
   margin-bottom: 10px;
 }
@@ -72,7 +97,7 @@
   word-break: break-word;
 }
 
-.updatedAt {
+.updated-at {
   font-size: 13px;
 }
 
@@ -90,20 +115,26 @@
 
 .rating {
   display: flex;
-  /* align-items: center; */
-  /* align-self: flex-start; */
+  align-items: center;
+  align-self: flex-start;
   width: 35px;
 }
 
+.rating > svg {
+  height: 15px;
+  width: 15px;
+  margin-right: 3px;
+  color: #f4c150;
+}
+
 .num-subs {
-  width: 60px;
+  width: 70px;
+}
+
+.num-subs > svg {
+  margin-right: 3px;
 }
 
 .price {
   width: 60px;
 }
-
-/* .rating img {
-  height: 16px;
-  width: 14px;
-} */
