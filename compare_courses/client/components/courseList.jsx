@@ -13,6 +13,7 @@ export default class CourseList extends React.Component {
       },
     };
     this.accordian = this.accordian.bind(this);
+    this.collapse = this.collapse.bind(this);
   }
 
   accordian() {
@@ -27,6 +28,12 @@ export default class CourseList extends React.Component {
     });
   }
 
+  collapse() {
+    if (this.state.expanded) {
+      this.accordian();
+    }
+  }
+
   render() {
     return (
       <div>
@@ -36,7 +43,10 @@ export default class CourseList extends React.Component {
               <Course
                 key={course.id}
                 course={course}
-                onclick={this.props.onclick}
+                onclick={id => {
+                  this.props.onclick(id);
+                  this.collapse();
+                }}
               />
             ))}
           </div>

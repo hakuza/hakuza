@@ -9,6 +9,7 @@ class App extends React.Component {
     this.state = {
       currId: undefined,
       courses: [],
+      topic: 'Programming',
     };
   }
 
@@ -37,7 +38,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="compare-header">
-          Compare to Other Programming Courses
+          Compare to Other {this.state.topic} Courses
         </div>
         <CourseList
           courses={this.state.courses}
